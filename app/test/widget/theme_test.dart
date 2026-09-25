@@ -27,12 +27,14 @@ void main() {
   });
 
   testWidgets('text inside a Scaffold renders dark', (tester) async {
-    await tester.pumpWidget(MaterialApp(
-      theme: AppTheme.light(),
-      home: Builder(
-        builder: (context) => Scaffold(body: Text('Blood pressure', style: Theme.of(context).textTheme.titleMedium)),
+    await tester.pumpWidget(
+      MaterialApp(
+        theme: AppTheme.light(),
+        home: Builder(
+          builder: (context) => Scaffold(body: Text('Blood pressure', style: Theme.of(context).textTheme.titleMedium)),
+        ),
       ),
-    ));
+    );
     final rich = tester.widget<RichText>(find.byType(RichText).first);
     expect(rich.text.style!.color!.computeLuminance(), lessThan(0.2));
   });

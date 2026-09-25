@@ -154,7 +154,7 @@ class _ReadingTile extends StatelessWidget {
                             text: reading.displayValue,
                             style: theme.textTheme.titleLarge?.copyWith(fontWeight: FontWeight.bold),
                           ),
-                          TextSpan(text: ' ${reading.type.unit}', style: theme.textTheme.bodyMedium),
+                          TextSpan(text: reading.type.displayUnit, style: theme.textTheme.bodyMedium),
                         ],
                       ),
                       textDirection: TextDirection.ltr,

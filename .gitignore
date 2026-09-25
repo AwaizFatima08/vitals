@@ -33,3 +33,6 @@ firebase-export-*/
 
 # Local-only
 *.log
+
+# Device test-run captures
+store/graphics/device_run_*/

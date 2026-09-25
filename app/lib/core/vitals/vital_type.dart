@@ -19,6 +19,13 @@ enum VitalType {
     return null;
   }
 
+  /// Unit for display after a number. A normal space before it (so at large
+  /// fonts the whole unit moves to the next line) and a word-joiner after "/"
+  /// (so "mg/dL" is never split into "mg/" + "dL"). A non-breaking space
+  /// here glued number+unit into one over-long word, which Flutter then
+  /// broke mid-word ("mm|Hg") on a 1.3x-font phone.
+  String get displayUnit => ' ${unit.replaceAll('/', '/\u2060')}';
+
   /// Blood pressure is the only vital entered as two numbers.
   bool get isDual => this == VitalType.bloodPressure;
 

@@ -12,8 +12,14 @@ class NumericKeypad extends StatelessWidget {
 
   const NumericKeypad({super.key, required this.onKey, required this.onBackspace, this.allowDecimal = false});
 
+  /// Shorter keys on short screens (small phones, display zoom, large
+  /// fonts) so the fields above the keypad — e.g. glucose context — aren't
+  /// pushed out of view. Still well above the 48dp touch-target minimum.
+  static double keyHeightFor(BuildContext context) => MediaQuery.sizeOf(context).height < 800 ? 52 : 64;
+
   @override
   Widget build(BuildContext context) {
+    final keyHeight = keyHeightFor(context);
     // Digits always left-to-right, even when the UI is in Urdu (RTL).
     return Directionality(
       textDirection: TextDirection.ltr,
@@ -25,12 +31,13 @@ class NumericKeypad extends StatelessWidget {
             ['4', '5', '6'],
             ['7', '8', '9'],
           ])
-            _row([for (final d in row) _digit(context, d)]),
+            _row([for (final d in row) _digit(context, d, keyHeight)]),
           _row([
-            allowDecimal ? _digit(context, '.') : const SizedBox.shrink(),
-            _digit(context, '0'),
+            allowDecimal ? _digit(context, '.', keyHeight) : const SizedBox.shrink(),
+            _digit(context, '0', keyHeight),
             _KeyButton(
               key: const ValueKey('key_backspace'),
+              height: keyHeight,
               semanticLabel: MaterialLocalizations.of(context).deleteButtonTooltip,
               onTap: () {
                 HapticFeedback.selectionClick();
@@ -48,9 +55,10 @@ class NumericKeypad extends StatelessWidget {
     return Row(children: [for (final c in children) Expanded(child: c)]);
   }
 
-  Widget _digit(BuildContext context, String d) {
+  Widget _digit(BuildContext context, String d, double height) {
     return _KeyButton(
       key: ValueKey('key_$d'),
+      height: height,
       semanticLabel: d,
       onTap: () {
         HapticFeedback.selectionClick();
@@ -65,8 +73,15 @@ class _KeyButton extends StatelessWidget {
   final Widget child;
   final VoidCallback onTap;
   final String semanticLabel;
+  final double height;
 
-  const _KeyButton({super.key, required this.child, required this.onTap, required this.semanticLabel});
+  const _KeyButton({
+    super.key,
+    required this.child,
+    required this.onTap,
+    required this.semanticLabel,
+    required this.height,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -83,7 +98,10 @@ class _KeyButton extends StatelessWidget {
           child: InkWell(
             borderRadius: BorderRadius.circular(14),
             onTap: onTap,
-            child: SizedBox(height: 64, child: Center(child: child)),
+            child: SizedBox(
+              height: height,
+              child: Center(child: child),
+            ),
           ),
         ),
       ),

@@ -101,7 +101,7 @@ class _VitalTile extends StatelessWidget {
                                   text: latest.displayValue,
                                   style: theme.textTheme.headlineSmall?.copyWith(fontWeight: FontWeight.bold),
                                 ),
-                                TextSpan(text: ' ${type.unit}', style: theme.textTheme.bodyMedium),
+                                TextSpan(text: type.displayUnit, style: theme.textTheme.bodyMedium),
                               ],
                             ),
                             textDirection: TextDirection.ltr,

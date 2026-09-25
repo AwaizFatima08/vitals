@@ -63,22 +63,29 @@ class WelcomeScreen extends StatelessWidget {
               icon: Icons.family_restroom,
               onTap: () => _startSignUp(context, isFamily: true),
             ),
-            const SizedBox(height: 28),
-            OutlinedButton.icon(
-              key: const ValueKey('welcome_sign_in'),
-              icon: const Icon(Icons.login),
-              label: Text(l10n.haveAccountSignIn, textAlign: TextAlign.center),
-              onPressed: () => Navigator.of(context).push(MaterialPageRoute(builder: (_) => const SignInScreen())),
-            ),
-            const SizedBox(height: 8),
+            const SizedBox(height: 20),
             Text(l10n.sharedAccountNote, style: theme.textTheme.bodySmall, textAlign: TextAlign.center),
-            const SizedBox(height: 28),
+            const SizedBox(height: 20),
             Text(
               l10n.onboardingDisclaimer,
               style: theme.textTheme.bodySmall?.copyWith(color: theme.colorScheme.onSurfaceVariant),
               textAlign: TextAlign.center,
             ),
           ],
+        ),
+      ),
+      // Pinned, never scrolled away: at large phone font sizes (common for
+      // this app's older users) it fell below the fold, and existing
+      // Medicine Reminder users must be able to find "sign in" at once.
+      bottomNavigationBar: SafeArea(
+        child: Padding(
+          padding: const EdgeInsets.fromLTRB(24, 8, 24, 16),
+          child: OutlinedButton.icon(
+            key: const ValueKey('welcome_sign_in'),
+            icon: const Icon(Icons.login),
+            label: Text(l10n.haveAccountSignIn, textAlign: TextAlign.center),
+            onPressed: () => Navigator.of(context).push(MaterialPageRoute(builder: (_) => const SignInScreen())),
+          ),
         ),
       ),
     );

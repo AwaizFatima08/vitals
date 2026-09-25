@@ -63,6 +63,7 @@ class _VitalEntryScreenState extends State<VitalEntryScreen> {
   bool _saving = false;
 
   VitalType get _type => widget.type;
+  bool get _compact => MediaQuery.sizeOf(context).height < 800;
   bool get _isEdit => widget.existing != null;
 
   @override
@@ -285,6 +286,9 @@ class _VitalEntryScreenState extends State<VitalEntryScreen> {
     final range = _previewRange;
     final urgent = VitalLabels.urgentMessage(l10n, range);
     final showKeypad = !_noteFocus.hasFocus;
+    // Short screens (small phones, display zoom, big fonts): tighten the
+    // spacing so required fields stay above the keypad.
+    final compact = _compact;
 
     return Scaffold(
       appBar: AppBar(
@@ -304,10 +308,10 @@ class _VitalEntryScreenState extends State<VitalEntryScreen> {
           children: [
             Expanded(
               child: ListView(
-                padding: const EdgeInsets.fromLTRB(16, 8, 16, 8),
+                padding: EdgeInsets.fromLTRB(16, compact ? 4 : 8, 16, 8),
                 children: [
                   Text('${widget.patient.name} · $name', style: theme.textTheme.titleSmall),
-                  const SizedBox(height: 10),
+                  SizedBox(height: compact ? 4 : 10),
                   if (_type.isDual)
                     Row(
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -322,7 +326,7 @@ class _VitalEntryScreenState extends State<VitalEntryScreen> {
                     )
                   else
                     _valueBox(0, name),
-                  const SizedBox(height: 10),
+                  SizedBox(height: compact ? 4 : 10),
                   if (range != null)
                     Align(
                       alignment: AlignmentDirectional.centerStart,
@@ -330,9 +334,9 @@ class _VitalEntryScreenState extends State<VitalEntryScreen> {
                     ),
                   if (urgent != null) ...[const SizedBox(height: 8), UrgentNotice(message: urgent)],
                   if (_type == VitalType.glucose) ...[
-                    const SizedBox(height: 12),
+                    SizedBox(height: compact ? 6 : 12),
                     Text(l10n.glucoseContextLabel, style: theme.textTheme.titleSmall),
-                    const SizedBox(height: 6),
+                    SizedBox(height: compact ? 4 : 6),
                     Wrap(
                       spacing: 8,
                       runSpacing: 8,
@@ -422,10 +426,10 @@ class _VitalEntryScreenState extends State<VitalEntryScreen> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(label, style: theme.textTheme.labelLarge, maxLines: 1, overflow: TextOverflow.ellipsis),
-            const SizedBox(height: 6),
+            SizedBox(height: _compact ? 2 : 6),
             AnimatedContainer(
               duration: const Duration(milliseconds: 150),
-              height: 76,
+              height: _compact ? 64 : 76,
               width: double.infinity,
               alignment: Alignment.center,
               decoration: BoxDecoration(
@@ -443,7 +447,7 @@ class _VitalEntryScreenState extends State<VitalEntryScreen> {
                         color: _text[field].isEmpty ? theme.colorScheme.outline : null,
                       ),
                     ),
-                    if (!_type.isDual) TextSpan(text: '  ${_type.unit}', style: theme.textTheme.titleMedium),
+                    if (!_type.isDual) TextSpan(text: ' ${_type.displayUnit}', style: theme.textTheme.titleMedium),
                   ],
                 ),
                 textDirection: TextDirection.ltr,
