@@ -135,7 +135,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
         preferredLanguage: _language ?? 'en',
       );
 
-      // Every account gets a "self" patient, exactly like Pill Reminder,
+      // Every account gets a "self" patient, exactly like Medicine Reminder,
       // so the two apps agree on who's who.
       final selfPatientId = await patientService.addPatient(
         name: user.displayName,

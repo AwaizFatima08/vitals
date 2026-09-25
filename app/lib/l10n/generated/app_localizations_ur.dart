@@ -42,7 +42,7 @@ class AppLocalizationsUr extends AppLocalizations {
 
   @override
   String get sharedAccountNote =>
-      'ایک LiveHealthy اکاؤنٹ تمام LiveHealthy ایپس میں چلتا ہے، بشمول Pill Reminder۔';
+      'ایک LiveHealthy اکاؤنٹ تمام LiveHealthy ایپس میں چلتا ہے، بشمول Medicine Reminder۔';
 
   @override
   String get signIn => 'سائن ان';
@@ -477,7 +477,7 @@ class AppLocalizationsUr extends AppLocalizations {
 
   @override
   String get deleteAccountBody =>
-      'آپ کا LiveHealthy اکاؤنٹ تمام LiveHealthy ایپس میں مشترک ہے۔ اسے حذف کرنے سے اکاؤنٹ مستقل طور پر ختم ہو جائے گا، اور جن مریضوں کو صرف آپ سنبھالتے ہیں ان کی تمام وائٹل ریڈنگز اور Pill Reminder کی دوائیں، شیڈول اور ہسٹری بھی حذف ہو جائیں گی۔ جو مریض آپ کسی اور کے ساتھ شیئر کرتے ہیں وہ ان کے پاس رہیں گے — صرف آپ کی رسائی ختم ہو گی۔ اسے واپس نہیں کیا جا سکتا۔';
+      'آپ کا LiveHealthy اکاؤنٹ تمام LiveHealthy ایپس میں مشترک ہے۔ اسے حذف کرنے سے اکاؤنٹ مستقل طور پر ختم ہو جائے گا، اور جن مریضوں کو صرف آپ سنبھالتے ہیں ان کی تمام وائٹل ریڈنگز اور Medicine Reminder کی دوائیں، شیڈول اور ہسٹری بھی حذف ہو جائیں گی۔ جو مریض آپ کسی اور کے ساتھ شیئر کرتے ہیں وہ ان کے پاس رہیں گے — صرف آپ کی رسائی ختم ہو گی۔ اسے واپس نہیں کیا جا سکتا۔';
 
   @override
   String get deleteEverything => 'سب کچھ حذف کریں';

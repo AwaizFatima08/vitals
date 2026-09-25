@@ -6,7 +6,7 @@ import '../auth/sign_up_screen.dart';
 
 /// First screen after install. The "who is this for" choice only decides
 /// what happens right after sign-up — patients can always be added later
-/// (design doc §3). Existing LiveHealthy users (e.g. from Pill Reminder)
+/// (design doc §3). Existing LiveHealthy users (e.g. from Medicine Reminder)
 /// get a prominent sign-in path, since it's the same account.
 class WelcomeScreen extends StatelessWidget {
   const WelcomeScreen({super.key});

@@ -12,7 +12,7 @@
   "onboardingFamily": "میں گھر والوں کے وائٹلز رکھتا/رکھتی ہوں",
   "onboardingFamilySubtitle": "والدین، شریکِ حیات یا کسی اور کے لیے",
   "haveAccountSignIn": "پہلے سے LiveHealthy ایپ استعمال کرتے ہیں؟ سائن ان کریں",
-  "sharedAccountNote": "ایک LiveHealthy اکاؤنٹ تمام LiveHealthy ایپس میں چلتا ہے، بشمول Pill Reminder۔",
+  "sharedAccountNote": "ایک LiveHealthy اکاؤنٹ تمام LiveHealthy ایپس میں چلتا ہے، بشمول Medicine Reminder۔",
 
   "signIn": "سائن ان",
   "signUp": "اکاؤنٹ بنائیں",
@@ -157,7 +157,7 @@
   "deleteAccount": "میرا اکاؤنٹ حذف کریں",
   "deleteAccountSubtitle": "آپ کا LiveHealthy اکاؤنٹ اور آپ کا ڈیٹا مستقل طور پر حذف ہو جائے گا",
   "deleteAccountTitle": "اپنا LiveHealthy اکاؤنٹ حذف کریں؟",
-  "deleteAccountBody": "آپ کا LiveHealthy اکاؤنٹ تمام LiveHealthy ایپس میں مشترک ہے۔ اسے حذف کرنے سے اکاؤنٹ مستقل طور پر ختم ہو جائے گا، اور جن مریضوں کو صرف آپ سنبھالتے ہیں ان کی تمام وائٹل ریڈنگز اور Pill Reminder کی دوائیں، شیڈول اور ہسٹری بھی حذف ہو جائیں گی۔ جو مریض آپ کسی اور کے ساتھ شیئر کرتے ہیں وہ ان کے پاس رہیں گے — صرف آپ کی رسائی ختم ہو گی۔ اسے واپس نہیں کیا جا سکتا۔",
+  "deleteAccountBody": "آپ کا LiveHealthy اکاؤنٹ تمام LiveHealthy ایپس میں مشترک ہے۔ اسے حذف کرنے سے اکاؤنٹ مستقل طور پر ختم ہو جائے گا، اور جن مریضوں کو صرف آپ سنبھالتے ہیں ان کی تمام وائٹل ریڈنگز اور Medicine Reminder کی دوائیں، شیڈول اور ہسٹری بھی حذف ہو جائیں گی۔ جو مریض آپ کسی اور کے ساتھ شیئر کرتے ہیں وہ ان کے پاس رہیں گے — صرف آپ کی رسائی ختم ہو گی۔ اسے واپس نہیں کیا جا سکتا۔",
   "deleteEverything": "سب کچھ حذف کریں",
   "confirmPasswordTitle": "اپنے پاس ورڈ کی تصدیق کریں",
   "confirmPasswordBody": "حفاظت کے لیے، اکاؤنٹ حذف کرنے کے لیے اپنا پاس ورڈ دوبارہ درج کریں۔",

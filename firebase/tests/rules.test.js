@@ -1,7 +1,7 @@
 // Firestore security-rules tests for the shared LiveHealthy project.
 // Run: cd firebase/tests && npm test   (starts the Firestore emulator)
 //
-// Covers the new Vitals rules AND re-checks the existing Pill Reminder
+// Covers the new Vitals rules AND re-checks the existing Medicine Reminder
 // rules, since both apps share one rules file.
 
 import { readFileSync } from 'node:fs';
@@ -160,7 +160,7 @@ describe('vitalReminders', () => {
   });
 });
 
-describe('shared patient rules (Pill Reminder + Vitals)', () => {
+describe('shared patient rules (Medicine Reminder + Vitals)', () => {
   test('member list query works (the query both apps run at sign-in)', async () => {
     const q = query(collection(as(BOB), 'patients'), where('memberUids', 'array-contains', BOB));
     await assertSucceeds(getDocs(q));
@@ -174,7 +174,7 @@ describe('shared patient rules (Pill Reminder + Vitals)', () => {
     await assertFails(updateDoc(doc(as(EVE), 'patients/p1'), { heightCm: 158 }));
   });
 
-  test('Pill Reminder medicines still readable by members only', async () => {
+  test('Medicine Reminder medicines still readable by members only', async () => {
     await assertSucceeds(getDoc(doc(as(BOB), 'patients/p1/medicines/m1')));
     await assertFails(getDoc(doc(as(EVE), 'patients/p1/medicines/m1')));
   });

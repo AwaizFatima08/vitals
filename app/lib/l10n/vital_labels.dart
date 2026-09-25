@@ -118,7 +118,9 @@ class VitalLabels {
     }
   }
 
-  static const relationships = ['self', 'mother', 'father', 'spouse', 'grandparent', 'child', 'other'];
+  /// Keys match what Medicine Reminder writes ("other family member"
+  /// included verbatim), so both apps read each other's patients cleanly.
+  static const relationships = ['self', 'mother', 'father', 'spouse', 'grandparent', 'child', 'other family member'];
 
   static String relationship(AppLocalizations l10n, String key) {
     switch (key) {
@@ -135,8 +137,7 @@ class VitalLabels {
       case 'child':
         return l10n.relChild;
       default:
-        // Pill Reminder stores e.g. "other family member" — anything not
-        // recognised shows as "Other family member".
+        // "other family member", plus anything unrecognised.
         return l10n.relOther;
     }
   }

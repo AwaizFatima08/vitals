@@ -1,4 +1,4 @@
-# LiveHealthy Vitals — Flutter app (see ../README.md)
+# LiveHealthy Vitals
 
 Second app in the LiveHealthy suite (after LiveHealthy-Medicine Reminder). An Android app
 for logging blood pressure, SpO2, pulse, weight and blood glucose at home, for yourself or a

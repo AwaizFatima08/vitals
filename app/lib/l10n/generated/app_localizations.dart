@@ -161,7 +161,7 @@ abstract class AppLocalizations {
   /// No description provided for @sharedAccountNote.
   ///
   /// In en, this message translates to:
-  /// **'One LiveHealthy account works across all LiveHealthy apps, including Pill Reminder.'**
+  /// **'One LiveHealthy account works across all LiveHealthy apps, including Medicine Reminder.'**
   String get sharedAccountNote;
 
   /// No description provided for @signIn.
@@ -953,7 +953,7 @@ abstract class AppLocalizations {
   /// No description provided for @deleteAccountBody.
   ///
   /// In en, this message translates to:
-  /// **'Your LiveHealthy account is shared by all LiveHealthy apps. Deleting it permanently removes the account and, for every patient you solely manage, all their vital readings AND any Pill Reminder medicines, schedules and history. Patients you share with another caregiver stay with them — you just lose access. This cannot be undone.'**
+  /// **'Your LiveHealthy account is shared by all LiveHealthy apps. Deleting it permanently removes the account and, for every patient you solely manage, all their vital readings AND any Medicine Reminder medicines, schedules and history. Patients you share with another caregiver stay with them — you just lose access. This cannot be undone.'**
   String get deleteAccountBody;
 
   /// No description provided for @deleteEverything.

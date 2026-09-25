@@ -156,7 +156,7 @@ void main() {
 
   group('AccountDeletionService', () {
     test('deletes owned patients across BOTH apps, leaves shared/other data', () async {
-      // Alice owns p_own (with vitals + Pill Reminder data); shares p_shared
+      // Alice owns p_own (with vitals + Medicine Reminder data); shares p_shared
       // owned by Bob; Bob also owns p_bob.
       await db.doc('users/alice').set({'displayName': 'Alice'});
       await db.doc('users/alice/vitalReminders/p_own_pulse').set({'enabled': true});

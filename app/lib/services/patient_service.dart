@@ -11,7 +11,7 @@ class PatientService {
   CollectionReference<Map<String, dynamic>> get _collection => _db.collection(FirestorePaths.patients);
 
   /// Patients where the given user is the owner or a co-caregiver — the
-  /// same query Pill Reminder uses, so both apps see the same people.
+  /// same query Medicine Reminder uses, so both apps see the same people.
   Stream<List<Patient>> watchPatientsForUser(String uid) {
     return _collection.where('memberUids', arrayContains: uid).snapshots().map((snap) {
       final patients = snap.docs.map(Patient.fromDoc).toList();
@@ -51,7 +51,7 @@ class PatientService {
   }
 
   /// Field-level update only — never rewrites the whole doc, so fields
-  /// owned by Pill Reminder are left untouched. Passing [clearHeight]
+  /// owned by Medicine Reminder are left untouched. Passing [clearHeight]
   /// removes a previously set height.
   Future<void> updatePatient(
     String patientId, {

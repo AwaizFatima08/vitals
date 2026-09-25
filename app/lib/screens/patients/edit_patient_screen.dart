@@ -32,6 +32,7 @@ class _EditPatientScreenState extends State<EditPatientScreen> {
   late final TextEditingController _nameController;
   late final TextEditingController _heightController;
   late String _relationship;
+  late final String _initialRelationship;
   bool _submitting = false;
   String? _error;
 
@@ -44,10 +45,11 @@ class _EditPatientScreenState extends State<EditPatientScreen> {
     _nameController = TextEditingController(text: p?.name ?? '');
     _heightController = TextEditingController(text: p?.heightCm == null ? '' : VitalReading.formatNumber(p!.heightCm!));
     if (p != null) {
-      _relationship = VitalLabels.relationships.contains(p.relationship) ? p.relationship : 'other';
+      _relationship = VitalLabels.relationships.contains(p.relationship) ? p.relationship : 'other family member';
     } else {
       _relationship = widget.isFirstPatient ? 'self' : 'mother';
     }
+    _initialRelationship = _relationship;
   }
 
   @override
@@ -92,7 +94,7 @@ class _EditPatientScreenState extends State<EditPatientScreen> {
               ),
               const SizedBox(height: 12),
               // The account holder's own "self" profile keeps its
-              // relationship — changing it would confuse Pill Reminder too.
+              // relationship — changing it would confuse Medicine Reminder too.
               if (!isSelfPatient)
                 DropdownButtonFormField<String>(
                   isExpanded: true,
@@ -155,7 +157,9 @@ class _EditPatientScreenState extends State<EditPatientScreen> {
         await patientService.updatePatient(
           p.id,
           name: _nameController.text.trim(),
-          relationship: p.isSelf ? null : _relationship,
+          // Only write it if changed: never normalise a value Medicine
+          // Reminder wrote just because this screen was saved.
+          relationship: (p.isSelf || _relationship == _initialRelationship) ? null : _relationship,
           heightCm: height,
           clearHeight: height == null && p.heightCm != null,
         );

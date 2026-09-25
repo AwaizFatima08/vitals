@@ -42,7 +42,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get sharedAccountNote =>
-      'One LiveHealthy account works across all LiveHealthy apps, including Pill Reminder.';
+      'One LiveHealthy account works across all LiveHealthy apps, including Medicine Reminder.';
 
   @override
   String get signIn => 'Sign in';
@@ -476,7 +476,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get deleteAccountBody =>
-      'Your LiveHealthy account is shared by all LiveHealthy apps. Deleting it permanently removes the account and, for every patient you solely manage, all their vital readings AND any Pill Reminder medicines, schedules and history. Patients you share with another caregiver stay with them — you just lose access. This cannot be undone.';
+      'Your LiveHealthy account is shared by all LiveHealthy apps. Deleting it permanently removes the account and, for every patient you solely manage, all their vital readings AND any Medicine Reminder medicines, schedules and history. Patients you share with another caregiver stay with them — you just lose access. This cannot be undone.';
 
   @override
   String get deleteEverything => 'Delete everything';

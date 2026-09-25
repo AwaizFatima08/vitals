@@ -12,7 +12,7 @@
   "onboardingFamily": "I'm tracking vitals for family",
   "onboardingFamilySubtitle": "For a parent, spouse, or someone else",
   "haveAccountSignIn": "Already use a LiveHealthy app? Sign in",
-  "sharedAccountNote": "One LiveHealthy account works across all LiveHealthy apps, including Pill Reminder.",
+  "sharedAccountNote": "One LiveHealthy account works across all LiveHealthy apps, including Medicine Reminder.",
 
   "signIn": "Sign in",
   "signUp": "Create account",
@@ -165,7 +165,7 @@
   "deleteAccount": "Delete my account",
   "deleteAccountSubtitle": "Permanently deletes your LiveHealthy account and the data you own",
   "deleteAccountTitle": "Delete your LiveHealthy account?",
-  "deleteAccountBody": "Your LiveHealthy account is shared by all LiveHealthy apps. Deleting it permanently removes the account and, for every patient you solely manage, all their vital readings AND any Pill Reminder medicines, schedules and history. Patients you share with another caregiver stay with them — you just lose access. This cannot be undone.",
+  "deleteAccountBody": "Your LiveHealthy account is shared by all LiveHealthy apps. Deleting it permanently removes the account and, for every patient you solely manage, all their vital readings AND any Medicine Reminder medicines, schedules and history. Patients you share with another caregiver stay with them — you just lose access. This cannot be undone.",
   "deleteEverything": "Delete everything",
   "confirmPasswordTitle": "Confirm your password",
   "confirmPasswordBody": "For your security, please re-enter your password to finish deleting your account.",

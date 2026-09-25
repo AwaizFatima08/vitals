@@ -5,7 +5,7 @@ import '../core/constants/firestore_paths.dart';
 import '../models/app_user.dart';
 
 /// Email/password auth against the shared LiveHealthy Firebase project, so
-/// an account created in Pill Reminder signs straight in here (and vice
+/// an account created in Medicine Reminder signs straight in here (and vice
 /// versa).
 class AuthService {
   final FirebaseAuth _auth;

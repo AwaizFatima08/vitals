@@ -1,8 +1,8 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 /// A person whose vitals are being tracked. Same document (and same shape)
-/// as LiveHealthy Pill Reminder's patient — Vitals only adds [heightCm],
-/// which Pill Reminder simply ignores.
+/// as LiveHealthy-Medicine Reminder's patient — Vitals only adds [heightCm],
+/// which Medicine Reminder simply ignores.
 class Patient {
   final String id;
   final String name;

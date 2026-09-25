@@ -1,10 +1,10 @@
 rules_version = '2';
 
 // Shared by the whole LiveHealthy suite (one Firebase project, one account):
-//   - LiveHealthy Pill Reminder  (repo AwaizFatima08/Live_Healthy)
+//   - LiveHealthy-Medicine Reminder  (repo AwaizFatima08/Live_Healthy)
 //   - LiveHealthy Vitals         (repo AwaizFatima08/vitals)
 // Deploying from either repo replaces the rules for BOTH apps, so this file
-// must be kept identical in both repos. Every Pill Reminder rule below is
+// must be kept identical in both repos. Every Medicine Reminder rule below is
 // unchanged; Vitals only ADDS the vitalReadings and vitalReminders matches.
 
 service cloud.firestore {

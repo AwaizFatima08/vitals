@@ -8,7 +8,7 @@ import '../../models/patient.dart';
 import '../../models/vital_reading.dart';
 import 'edit_patient_screen.dart';
 
-/// Everyone this account tracks — the same list Pill Reminder shows. Tap to
+/// Everyone this account tracks — the same list Medicine Reminder shows. Tap to
 /// make a patient active; the edit icon changes name/height.
 class PatientsScreen extends StatelessWidget {
   const PatientsScreen({super.key});
