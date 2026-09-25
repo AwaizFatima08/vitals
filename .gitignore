@@ -1,0 +1,35 @@
+# Flutter/Dart
+**/build/
+**/.dart_tool/
+**/.flutter-plugins
+**/.flutter-plugins-dependencies
+**/.packages
+**/.pub-cache/
+**/.pub/
+**/ios/Flutter/.last_build_id
+**/*.g.dart.bak
+
+# Secrets - never commit
+secrets/
+**/google-services.json
+**/GoogleService-Info.plist
+**/key.properties
+**/*.jks
+**/*.keystore
+firebase-debug.log
+firebase-export-*/
+.firebase/
+
+# IDE
+**/.idea/
+**/*.iml
+.vscode/
+
+# OS
+.DS_Store
+
+# Node (rules tests)
+**/node_modules/
+
+# Local-only
+*.log
