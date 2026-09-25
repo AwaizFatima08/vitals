@@ -4,4 +4,7 @@
          to allow setting breakpoints, to provide hot reload, etc.
     -->
     <uses-permission android:name="android.permission.INTERNET"/>
+    <!-- Debug only: lets the app reach local Firebase emulators over http
+         (see FIREBASE_EMULATOR_HOST in main.dart). Not in release. -->
+    <application android:usesCleartextTraffic="true" />
 </manifest>

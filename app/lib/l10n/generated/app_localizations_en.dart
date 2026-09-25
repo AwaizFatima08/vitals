@@ -18,7 +18,8 @@ class AppLocalizationsEn extends AppLocalizations {
   String get appSubtitle => 'Vitals';
 
   @override
-  String get tagline => 'Log blood pressure, oxygen, pulse, weight and blood sugar — simply.';
+  String get tagline =>
+      'Log blood pressure, oxygen, pulse, weight and blood sugar — simply.';
 
   @override
   String get onboardingTitle => 'Who is this app for?';
@@ -33,13 +34,15 @@ class AppLocalizationsEn extends AppLocalizations {
   String get onboardingFamily => 'I\'m tracking vitals for family';
 
   @override
-  String get onboardingFamilySubtitle => 'For a parent, spouse, or someone else';
+  String get onboardingFamilySubtitle =>
+      'For a parent, spouse, or someone else';
 
   @override
   String get haveAccountSignIn => 'Already use a LiveHealthy app? Sign in';
 
   @override
-  String get sharedAccountNote => 'One LiveHealthy account works across all LiveHealthy apps, including Pill Reminder.';
+  String get sharedAccountNote =>
+      'One LiveHealthy account works across all LiveHealthy apps, including Pill Reminder.';
 
   @override
   String get signIn => 'Sign in';
@@ -63,7 +66,8 @@ class AppLocalizationsEn extends AppLocalizations {
   String get forgotPassword => 'Forgot password?';
 
   @override
-  String get resetEmailSent => 'If an account exists for that email, a password reset link is on its way.';
+  String get resetEmailSent =>
+      'If an account exists for that email, a password reset link is on its way.';
 
   @override
   String get enterEmailFirst => 'Enter your email above first.';
@@ -78,10 +82,12 @@ class AppLocalizationsEn extends AppLocalizations {
   String get passwordTooShort => 'At least 6 characters';
 
   @override
-  String get signInFailed => 'Could not sign in. Check your email and password.';
+  String get signInFailed =>
+      'Could not sign in. Check your email and password.';
 
   @override
-  String get errorEmailInUse => 'That email is already registered. Try signing in instead.';
+  String get errorEmailInUse =>
+      'That email is already registered. Try signing in instead.';
 
   @override
   String get errorWeakPassword => 'Please choose a stronger password.';
@@ -206,7 +212,8 @@ class AppLocalizationsEn extends AppLocalizations {
   String get deleteReadingTitle => 'Delete this reading?';
 
   @override
-  String get deleteReadingBody => 'This removes the reading from history and charts. It cannot be undone.';
+  String get deleteReadingBody =>
+      'This removes the reading from history and charts. It cannot be undone.';
 
   @override
   String get futureTimeError => 'The reading time can\'t be in the future.';
@@ -220,7 +227,8 @@ class AppLocalizationsEn extends AppLocalizations {
   }
 
   @override
-  String get validationDiastolic => 'The lower number must be less than the upper number';
+  String get validationDiastolic =>
+      'The lower number must be less than the upper number';
 
   @override
   String get rangeBpNormal => 'Normal';
@@ -316,7 +324,12 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String readingsCount(int count) {
-    String _temp0 = intl.Intl.pluralLogic(count, locale: localeName, other: '$count readings', one: '1 reading');
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count readings',
+      one: '1 reading',
+    );
     return '$_temp0';
   }
 
@@ -383,10 +396,12 @@ class AppLocalizationsEn extends AppLocalizations {
   String get switchPatient => 'Switch patient';
 
   @override
-  String get firstFamilyMemberPrompt => 'Add the family member whose vitals you\'ll be tracking.';
+  String get firstFamilyMemberPrompt =>
+      'Add the family member whose vitals you\'ll be tracking.';
 
   @override
-  String get noPatientsPrompt => 'Add the first person whose vitals you\'ll track.';
+  String get noPatientsPrompt =>
+      'Add the first person whose vitals you\'ll track.';
 
   @override
   String get sharedWithCaregivers => 'Shared with other caregivers';
@@ -453,7 +468,8 @@ class AppLocalizationsEn extends AppLocalizations {
   String get deleteAccount => 'Delete my account';
 
   @override
-  String get deleteAccountSubtitle => 'Permanently deletes your LiveHealthy account and the data you own';
+  String get deleteAccountSubtitle =>
+      'Permanently deletes your LiveHealthy account and the data you own';
 
   @override
   String get deleteAccountTitle => 'Delete your LiveHealthy account?';
@@ -469,13 +485,15 @@ class AppLocalizationsEn extends AppLocalizations {
   String get confirmPasswordTitle => 'Confirm your password';
 
   @override
-  String get confirmPasswordBody => 'For your security, please re-enter your password to finish deleting your account.';
+  String get confirmPasswordBody =>
+      'For your security, please re-enter your password to finish deleting your account.';
 
   @override
   String get confirm => 'Confirm';
 
   @override
-  String get passwordMismatch => 'That password didn\'t match. Please try again.';
+  String get passwordMismatch =>
+      'That password didn\'t match. Please try again.';
 
   @override
   String get deleteFailed => 'Could not delete your account. Please try again.';

@@ -1,6 +1,9 @@
 import 'dart:async';
 
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -24,6 +27,7 @@ final GlobalKey<NavigatorState> rootNavigatorKey = GlobalKey<NavigatorState>();
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+  await _useEmulatorsIfRequested();
   final launchPayload = await NotificationService.instance.initialize();
 
   final authService = AuthService();
@@ -47,6 +51,17 @@ Future<void> main() async {
       launchPayload: launchPayload,
     ),
   );
+}
+
+/// Debug-only: `flutter run --dart-define=FIREBASE_EMULATOR_HOST=10.0.2.2`
+/// points Auth + Firestore at local emulators (firebase emulators:start),
+/// so testing never touches production data. Ignored in release builds.
+Future<void> _useEmulatorsIfRequested() async {
+  const host = String.fromEnvironment('FIREBASE_EMULATOR_HOST');
+  if (host.isEmpty || kReleaseMode) return;
+  FirebaseFirestore.instance.useFirestoreEmulator(host, 8085);
+  await FirebaseAuth.instance.useAuthEmulator(host, 9099);
+  debugPrint('Using Firebase emulators at $host');
 }
 
 /// All dependencies are passed in, so tests can build the whole app on

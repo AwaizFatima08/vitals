@@ -18,7 +18,8 @@ class AppLocalizationsUr extends AppLocalizations {
   String get appSubtitle => 'وائٹلز';
 
   @override
-  String get tagline => 'بلڈ پریشر، آکسیجن، نبض، وزن اور بلڈ شوگر — آسانی سے درج کریں۔';
+  String get tagline =>
+      'بلڈ پریشر، آکسیجن، نبض، وزن اور بلڈ شوگر — آسانی سے درج کریں۔';
 
   @override
   String get onboardingTitle => 'یہ ایپ کس کے لیے ہے؟';
@@ -36,10 +37,12 @@ class AppLocalizationsUr extends AppLocalizations {
   String get onboardingFamilySubtitle => 'والدین، شریکِ حیات یا کسی اور کے لیے';
 
   @override
-  String get haveAccountSignIn => 'پہلے سے LiveHealthy ایپ استعمال کرتے ہیں؟ سائن ان کریں';
+  String get haveAccountSignIn =>
+      'پہلے سے LiveHealthy ایپ استعمال کرتے ہیں؟ سائن ان کریں';
 
   @override
-  String get sharedAccountNote => 'ایک LiveHealthy اکاؤنٹ تمام LiveHealthy ایپس میں چلتا ہے، بشمول Pill Reminder۔';
+  String get sharedAccountNote =>
+      'ایک LiveHealthy اکاؤنٹ تمام LiveHealthy ایپس میں چلتا ہے، بشمول Pill Reminder۔';
 
   @override
   String get signIn => 'سائن ان';
@@ -63,7 +66,8 @@ class AppLocalizationsUr extends AppLocalizations {
   String get forgotPassword => 'پاس ورڈ بھول گئے؟';
 
   @override
-  String get resetEmailSent => 'اگر اس ای میل کا اکاؤنٹ موجود ہے تو پاس ورڈ ری سیٹ کا لنک بھیج دیا گیا ہے۔';
+  String get resetEmailSent =>
+      'اگر اس ای میل کا اکاؤنٹ موجود ہے تو پاس ورڈ ری سیٹ کا لنک بھیج دیا گیا ہے۔';
 
   @override
   String get enterEmailFirst => 'پہلے اوپر اپنی ای میل درج کریں۔';
@@ -78,10 +82,12 @@ class AppLocalizationsUr extends AppLocalizations {
   String get passwordTooShort => 'کم از کم 6 حروف';
 
   @override
-  String get signInFailed => 'سائن ان نہیں ہو سکا۔ اپنی ای میل اور پاس ورڈ چیک کریں۔';
+  String get signInFailed =>
+      'سائن ان نہیں ہو سکا۔ اپنی ای میل اور پاس ورڈ چیک کریں۔';
 
   @override
-  String get errorEmailInUse => 'یہ ای میل پہلے سے رجسٹرڈ ہے۔ سائن ان کر کے دیکھیں۔';
+  String get errorEmailInUse =>
+      'یہ ای میل پہلے سے رجسٹرڈ ہے۔ سائن ان کر کے دیکھیں۔';
 
   @override
   String get errorWeakPassword => 'براہ کرم زیادہ مضبوط پاس ورڈ منتخب کریں۔';
@@ -206,7 +212,8 @@ class AppLocalizationsUr extends AppLocalizations {
   String get deleteReadingTitle => 'یہ ریڈنگ حذف کریں؟';
 
   @override
-  String get deleteReadingBody => 'یہ ریڈنگ ہسٹری اور چارٹ سے ہٹ جائے گی۔ اسے واپس نہیں لایا جا سکتا۔';
+  String get deleteReadingBody =>
+      'یہ ریڈنگ ہسٹری اور چارٹ سے ہٹ جائے گی۔ اسے واپس نہیں لایا جا سکتا۔';
 
   @override
   String get futureTimeError => 'ریڈنگ کا وقت آنے والا وقت نہیں ہو سکتا۔';
@@ -220,7 +227,8 @@ class AppLocalizationsUr extends AppLocalizations {
   }
 
   @override
-  String get validationDiastolic => 'نیچے والا نمبر اوپر والے نمبر سے کم ہونا چاہیے';
+  String get validationDiastolic =>
+      'نیچے والا نمبر اوپر والے نمبر سے کم ہونا چاہیے';
 
   @override
   String get rangeBpNormal => 'نارمل';
@@ -284,7 +292,8 @@ class AppLocalizationsUr extends AppLocalizations {
       'یہ ریڈنگ بہت زیادہ ہے۔ اگر یہ اسی طرح زیادہ رہے، یا سینے میں درد، سانس پھولنا، کمزوری یا نظر میں تبدیلی ہو تو فوری طبی مدد حاصل کریں۔';
 
   @override
-  String get urgentSpo2 => 'آکسیجن کی یہ سطح بہت کم ہے۔ اگر ریڈنگ درست ہے (آلے کی غلطی نہیں) تو جلد طبی مدد حاصل کریں۔';
+  String get urgentSpo2 =>
+      'آکسیجن کی یہ سطح بہت کم ہے۔ اگر ریڈنگ درست ہے (آلے کی غلطی نہیں) تو جلد طبی مدد حاصل کریں۔';
 
   @override
   String get disclaimerShort =>
@@ -315,7 +324,12 @@ class AppLocalizationsUr extends AppLocalizations {
 
   @override
   String readingsCount(int count) {
-    String _temp0 = intl.Intl.pluralLogic(count, locale: localeName, other: '$count ریڈنگز', one: '1 ریڈنگ');
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count ریڈنگز',
+      one: '1 ریڈنگ',
+    );
     return '$_temp0';
   }
 
@@ -337,7 +351,8 @@ class AppLocalizationsUr extends AppLocalizations {
   String get heightCm => 'قد (سینٹی میٹر)';
 
   @override
-  String get heightHelp => 'BMI کے حساب کے لیے۔ آپ بعد میں بھی درج کر سکتے ہیں۔';
+  String get heightHelp =>
+      'BMI کے حساب کے لیے۔ آپ بعد میں بھی درج کر سکتے ہیں۔';
 
   @override
   String get patientsTitle => 'مریض';
@@ -382,7 +397,8 @@ class AppLocalizationsUr extends AppLocalizations {
   String get switchPatient => 'مریض تبدیل کریں';
 
   @override
-  String get firstFamilyMemberPrompt => 'خاندان کے اس فرد کو شامل کریں جس کے وائٹلز آپ رکھیں گے۔';
+  String get firstFamilyMemberPrompt =>
+      'خاندان کے اس فرد کو شامل کریں جس کے وائٹلز آپ رکھیں گے۔';
 
   @override
   String get noPatientsPrompt => 'پہلا فرد شامل کریں جس کے وائٹلز آپ رکھیں گے۔';
@@ -421,7 +437,8 @@ class AppLocalizationsUr extends AppLocalizations {
   }
 
   @override
-  String get reminderNotificationBodySelf => 'اپنی ریڈنگ درج کرنے کے لیے ٹیپ کریں۔';
+  String get reminderNotificationBodySelf =>
+      'اپنی ریڈنگ درج کرنے کے لیے ٹیپ کریں۔';
 
   @override
   String get notificationsBlocked =>
@@ -452,7 +469,8 @@ class AppLocalizationsUr extends AppLocalizations {
   String get deleteAccount => 'میرا اکاؤنٹ حذف کریں';
 
   @override
-  String get deleteAccountSubtitle => 'آپ کا LiveHealthy اکاؤنٹ اور آپ کا ڈیٹا مستقل طور پر حذف ہو جائے گا';
+  String get deleteAccountSubtitle =>
+      'آپ کا LiveHealthy اکاؤنٹ اور آپ کا ڈیٹا مستقل طور پر حذف ہو جائے گا';
 
   @override
   String get deleteAccountTitle => 'اپنا LiveHealthy اکاؤنٹ حذف کریں؟';
@@ -468,7 +486,8 @@ class AppLocalizationsUr extends AppLocalizations {
   String get confirmPasswordTitle => 'اپنے پاس ورڈ کی تصدیق کریں';
 
   @override
-  String get confirmPasswordBody => 'حفاظت کے لیے، اکاؤنٹ حذف کرنے کے لیے اپنا پاس ورڈ دوبارہ درج کریں۔';
+  String get confirmPasswordBody =>
+      'حفاظت کے لیے، اکاؤنٹ حذف کرنے کے لیے اپنا پاس ورڈ دوبارہ درج کریں۔';
 
   @override
   String get confirm => 'تصدیق کریں';

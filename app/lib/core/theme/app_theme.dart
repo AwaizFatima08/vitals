@@ -29,16 +29,20 @@ class AppTheme {
   }
 
   static ThemeData light() {
-    // Scale the size geometry itself: ThemeData.textTheme has null font
-    // sizes under Material 3 (sizes are merged in later), so applying
-    // fontSizeFactor to it trips a TextStyle assertion.
-    final geometry = Typography.material2021().englishLike.apply(fontSizeFactor: 1.1);
+    // Build a complete text theme (colours from `black`, sizes from the
+    // `englishLike` geometry) and scale that. ThemeData.textTheme alone has
+    // null sizes under Material 3, and the geometry alone has no colours —
+    // passing either one scaled breaks (assertion / invisible text).
+    final scheme = ColorScheme.fromSeed(seedColor: primary);
+    final typography = Typography.material2021(colorScheme: scheme);
+    final textTheme = typography.black
+        .merge(typography.englishLike)
+        .apply(fontSizeFactor: 1.1, bodyColor: scheme.onSurface, displayColor: scheme.onSurface);
     final base = ThemeData(
       useMaterial3: true,
-      colorSchemeSeed: primary,
-      brightness: Brightness.light,
+      colorScheme: scheme,
       scaffoldBackgroundColor: const Color(0xFFF7F9F8),
-      textTheme: geometry,
+      textTheme: textTheme,
     );
     return base.copyWith(
       filledButtonTheme: FilledButtonThemeData(

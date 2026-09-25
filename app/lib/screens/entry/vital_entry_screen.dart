@@ -81,6 +81,11 @@ class _VitalEntryScreenState extends State<VitalEntryScreen> {
       _noteController.text = e.note;
     }
     _noteFocus.addListener(() => setState(() {}));
+    // A "Reading saved" snackbar from the previous entry would sit on top of
+    // this screen's Save button; clear it so the first tap always lands.
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (mounted) ScaffoldMessenger.maybeOf(context)?.hideCurrentSnackBar();
+    });
   }
 
   @override
@@ -211,7 +216,7 @@ class _VitalEntryScreenState extends State<VitalEntryScreen> {
       } else {
         await awaitWriteOrQueue(vitalService.addReading(widget.patient.id, reading));
       }
-      messenger.showSnackBar(SnackBar(content: Text(l10n.readingSaved)));
+      messenger.showSnackBar(SnackBar(content: Text(l10n.readingSaved), duration: const Duration(seconds: 2)));
       navigator.pop(true);
     } catch (_) {
       if (mounted) {
@@ -248,7 +253,7 @@ class _VitalEntryScreenState extends State<VitalEntryScreen> {
     if (confirmed != true) return;
     try {
       await awaitWriteOrQueue(vitalService.deleteReading(widget.patient.id, widget.existing!.id));
-      messenger.showSnackBar(SnackBar(content: Text(l10n.readingDeleted)));
+      messenger.showSnackBar(SnackBar(content: Text(l10n.readingDeleted), duration: const Duration(seconds: 2)));
       navigator.pop(true);
     } catch (_) {
       messenger.showSnackBar(SnackBar(content: Text(l10n.saveFailed)));
