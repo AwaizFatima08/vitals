@@ -13,6 +13,17 @@ Date: 2026-09-25
 | On-device end-to-end, Android 15 emulator against local Firebase emulators (sign-up → BP → glucose → height/BMI → charts → reminders → family member → Urdu → sign out → sign in) | pass |
 | Release AAB/APK build, R8 + resource shrinking, signature check | pass |
 
+## Real-device run (Samsung Galaxy A12 SM-A125F, Android 12)
+720×1600, display zoom (density 340), **1.3× system font**. Full journey passes against local
+Firebase emulators via `adb reverse` (`scripts/run_e2e.sh R58R61F3FDK`). Issues found only on
+this device, all fixed:
+- The welcome screen's "sign in" button was below the fold, so existing Medicine Reminder
+  users couldn't see it. It's now pinned to the bottom.
+- The keypad covered the required glucose "When was it taken?" chips. Keys are shorter and
+  spacing is tighter on screens under 800dp tall.
+- The "Reminders" nav label wrapped mid-word, and units split ("mg/" + "dL"). Both fixed.
+Real-font layout assertions for these now run in the on-device test.
+
 ## Real bugs found by testing (all fixed)
 1. **App couldn't render (theme).** Scaling `ThemeData.textTheme` under Material 3 hits a
    TextStyle assertion because sizes are null at that point.
@@ -69,5 +80,6 @@ Date: 2026-09-25
 - Design-doc questions still open: a low-BP band (a reading like 80/50 currently shows
   "Normal", because §6 defines no low range); pediatric/pregnancy threshold sets; editable
   per-patient ranges.
-- Real-device check of reminder delivery under OEM battery optimisation.
+- Reminder *delivery* on a real phone over a day (battery optimisation). The device run
+  confirms scheduling, not an actual next-morning notification.
 - Play Console's own prelaunch report (runs after the AAB is uploaded to a testing track).
