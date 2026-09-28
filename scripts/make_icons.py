@@ -23,10 +23,12 @@ def heart_points(cx, cy, size, n=400):
 def draw_mark(draw, cx, cy, size, heart_color=WHITE, line_color=GREEN):
     """White heart with an ECG pulse line across it."""
     draw.polygon(heart_points(cx, cy, size), fill=heart_color)
-    w = size * 0.075
+    w = size * 0.085  # thicker line survives 48dp launcher size
     u = size / 100
     y0 = cy + 2 * u
-    pts = [(-46, 0), (-18, 0), (-10, -16), (-2, 20), (8, -34), (16, 8), (22, 0), (46, 0)]
+    # Peaks stay inside the heart: a taller spike used to poke through the
+    # top notch and break the heart's outline.
+    pts = [(-42, 0), (-18, 0), (-11, -14), (-3, 16), (6, -22), (14, 8), (20, 0), (42, 0)]
     pts = [(cx + x * u, y0 + y * u) for x, y in pts]
     draw.line(pts, fill=line_color, width=int(w), joint='curve')
     for p in (pts[0], pts[-1]):
@@ -48,7 +50,7 @@ def launcher_icon(path, size=1024):
     big = size * S
     img = gradient_bg(big)
     d = ImageDraw.Draw(img)
-    draw_mark(d, big / 2, big / 2 + big * 0.02, big * 0.62)
+    draw_mark(d, big / 2, big / 2 + big * 0.02, big * 0.64)
     img.resize((size, size), Image.LANCZOS).save(path)
 
 
@@ -57,7 +59,7 @@ def adaptive_foreground(path, size=1024):
     big = size * S
     img = Image.new('RGBA', (big, big), (0, 0, 0, 0))
     d = ImageDraw.Draw(img)
-    draw_mark(d, big / 2, big / 2 + big * 0.012, big * 0.40)
+    draw_mark(d, big / 2, big / 2 + big * 0.012, big * 0.56)  # inside the 66% adaptive safe zone
     img.resize((size, size), Image.LANCZOS).save(path)
 
 
