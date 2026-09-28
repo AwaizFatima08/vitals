@@ -1,6 +1,6 @@
-# LiveHealthy Vitals — Flutter app (see ../README.md)
+# LiveHealthy: Vitals — Flutter app (see ../README.md)
 
-Second app in the LiveHealthy suite (after LiveHealthy-Medicine Reminder). An Android app
+Second app in the LiveHealthy suite (after LiveHealthy: Medicine Reminder). An Android app
 for logging blood pressure, SpO2, pulse, weight and blood glucose at home, for yourself or a
 family member. Scope: [docs/design-v1.md](docs/design-v1.md).
 
@@ -20,7 +20,6 @@ app/                 Flutter app
   test/              unit, service (fake Firestore) and widget tests
   integration_test/  on-device end-to-end journey (+ Play Store screenshots)
 firebase/            firestore.rules + indexes (shared with Medicine Reminder!), rules tests
-website/             pages for livehealthy.homilabs.org (upload to site root)
 store/               Play listing text + graphics
 scripts/             icons, website generator, e2e runner, backup
 secrets/             release keystore + credentials (gitignored; never commit)
@@ -33,7 +32,6 @@ cd firebase/tests && npm install && npm test                 # 18 rules tests (J
 firebase emulators:start --only auth,firestore               # (repo root, JDK 21+) then:
 scripts/run_e2e.sh emulator-5554                             # on-device end-to-end + screenshots
 cd app && flutter build appbundle --release                  # Play upload
-python3 scripts/build_website.py                             # regenerate website/
 scripts/backup.sh                                            # local + Google Drive backup
 ```
 `flutter run --dart-define=FIREBASE_EMULATOR_HOST=10.0.2.2` runs a debug build against the
@@ -47,3 +45,10 @@ before every deploy:
 ```bash
 firebase deploy --only firestore --project live-healthy-medreminder
 ```
+
+## Website
+livehealthy.homilabs.org is the shared site for the whole family: one privacy policy, one set of
+terms and one account-deletion page cover every LiveHealthy app, because the account is shared.
+The source lives in the Medicine Reminder repo (`live_healthy/website/`). It's hosted on
+Hostinger and uploaded by hand to the site root. Vitals links to those same pages (see
+`app/lib/core/constants/links.dart`).

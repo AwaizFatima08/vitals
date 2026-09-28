@@ -1,7 +1,7 @@
 {
   "@@locale": "en",
 
-  "appTitle": "LiveHealthy Vitals",
+  "appTitle": "LiveHealthy: Vitals",
   "brandName": "LiveHealthy",
   "appSubtitle": "Vitals",
   "tagline": "Log blood pressure, oxygen, pulse, weight and blood sugar — simply.",
@@ -12,7 +12,7 @@
   "onboardingFamily": "I'm tracking vitals for family",
   "onboardingFamilySubtitle": "For a parent, spouse, or someone else",
   "haveAccountSignIn": "Already use a LiveHealthy app? Sign in",
-  "sharedAccountNote": "One LiveHealthy account works across all LiveHealthy apps, including Medicine Reminder.",
+  "sharedAccountNote": "One LiveHealthy account works across all LiveHealthy apps, including LiveHealthy: Medicine Reminder.",
 
   "signIn": "Sign in",
   "signUp": "Create account",
@@ -105,7 +105,7 @@
   "urgentSpo2": "This oxygen level is very low. If the reading is correct (not a device error), seek medical care promptly.",
   "disclaimerShort": "Colour flags use general adult reference ranges. For information only — not a diagnosis. Talk to your doctor about your readings.",
   "disclaimerLimitations": "These ranges are for adults. They may not suit children, pregnancy, athletes, or people on medicines that affect heart rate, blood pressure or blood sugar.",
-  "onboardingDisclaimer": "LiveHealthy Vitals helps you keep a record of readings you take with your own devices. It does not measure anything itself and does not give medical advice.",
+  "onboardingDisclaimer": "LiveHealthy: Vitals helps you keep a record of readings you take with your own devices. It does not measure anything itself and does not give medical advice.",
 
   "range7": "7 days",
   "range30": "30 days",
@@ -165,7 +165,7 @@
   "deleteAccount": "Delete my account",
   "deleteAccountSubtitle": "Permanently deletes your LiveHealthy account and the data you own",
   "deleteAccountTitle": "Delete your LiveHealthy account?",
-  "deleteAccountBody": "Your LiveHealthy account is shared by all LiveHealthy apps. Deleting it permanently removes the account and, for every patient you solely manage, all their vital readings AND any Medicine Reminder medicines, schedules and history. Patients you share with another caregiver stay with them — you just lose access. This cannot be undone.",
+  "deleteAccountBody": "Your LiveHealthy account is shared by all LiveHealthy apps. Deleting it permanently removes the account and, for every patient you solely manage, all their vital readings AND any LiveHealthy: Medicine Reminder medicines, schedules and history. Patients you share with another caregiver stay with them — you just lose access. This cannot be undone.",
   "deleteEverything": "Delete everything",
   "confirmPasswordTitle": "Confirm your password",
   "confirmPasswordBody": "For your security, please re-enter your password to finish deleting your account.",

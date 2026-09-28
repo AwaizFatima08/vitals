@@ -1,4 +1,4 @@
-# Prelaunch Review — LiveHealthy Vitals v1.0.0
+# Prelaunch Review — LiveHealthy: Vitals v1.0.0
 
 Date: 2026-09-25
 
@@ -71,12 +71,9 @@ Real-font layout assertions for these now run in the on-device test.
   production rejects Vitals reads/writes. Copy the same `firestore.rules` /
   `firestore.indexes.json` into the Medicine Reminder repo so a deploy from there can't
   remove the Vitals rules.
-- **Medicine Reminder's account deletion** doesn't yet delete `vitalReadings` /
-  `vitalReminders`. Deleting from Medicine Reminder would leave Vitals data orphaned.
-  It needs the same cascade as `AccountDeletionService` here.
-- **Upload the website files** (`website/`) to the site root on Hostinger. `index.html` is an
-  updated copy of the family landing page with the Vitals card set to "Available now". Add the
-  Play link once the listing exists.
+- **Upload the shared website** (`live_healthy/website/`: index, privacy-policy,
+  terms-and-conditions, deleteaccount) to the Hostinger site root. As of 2026-09-28 these cover
+  both apps. Vitals uses the same URLs; it has no separate pages.
 - Design-doc questions still open: a low-BP band (a reading like 80/50 currently shows
   "Normal", because §6 defines no low range); pediatric/pregnancy threshold sets; editable
   per-patient ranges.

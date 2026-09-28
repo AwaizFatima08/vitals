@@ -9,7 +9,7 @@ class AppLocalizationsUr extends AppLocalizations {
   AppLocalizationsUr([String locale = 'ur']) : super(locale);
 
   @override
-  String get appTitle => 'LiveHealthy Vitals';
+  String get appTitle => 'LiveHealthy: Vitals';
 
   @override
   String get brandName => 'LiveHealthy';
@@ -42,7 +42,7 @@ class AppLocalizationsUr extends AppLocalizations {
 
   @override
   String get sharedAccountNote =>
-      'ایک LiveHealthy اکاؤنٹ تمام LiveHealthy ایپس میں چلتا ہے، بشمول Medicine Reminder۔';
+      'ایک LiveHealthy اکاؤنٹ تمام LiveHealthy ایپس میں چلتا ہے، بشمول LiveHealthy: Medicine Reminder۔';
 
   @override
   String get signIn => 'سائن ان';
@@ -305,7 +305,7 @@ class AppLocalizationsUr extends AppLocalizations {
 
   @override
   String get onboardingDisclaimer =>
-      'LiveHealthy Vitals آپ کے اپنے آلات سے لی گئی ریڈنگز کا ریکارڈ رکھنے میں مدد دیتی ہے۔ یہ خود کچھ نہیں ناپتی اور طبی مشورہ نہیں دیتی۔';
+      'LiveHealthy: Vitals آپ کے اپنے آلات سے لی گئی ریڈنگز کا ریکارڈ رکھنے میں مدد دیتی ہے۔ یہ خود کچھ نہیں ناپتی اور طبی مشورہ نہیں دیتی۔';
 
   @override
   String get range7 => '7 دن';
@@ -477,7 +477,7 @@ class AppLocalizationsUr extends AppLocalizations {
 
   @override
   String get deleteAccountBody =>
-      'آپ کا LiveHealthy اکاؤنٹ تمام LiveHealthy ایپس میں مشترک ہے۔ اسے حذف کرنے سے اکاؤنٹ مستقل طور پر ختم ہو جائے گا، اور جن مریضوں کو صرف آپ سنبھالتے ہیں ان کی تمام وائٹل ریڈنگز اور Medicine Reminder کی دوائیں، شیڈول اور ہسٹری بھی حذف ہو جائیں گی۔ جو مریض آپ کسی اور کے ساتھ شیئر کرتے ہیں وہ ان کے پاس رہیں گے — صرف آپ کی رسائی ختم ہو گی۔ اسے واپس نہیں کیا جا سکتا۔';
+      'آپ کا LiveHealthy اکاؤنٹ تمام LiveHealthy ایپس میں مشترک ہے۔ اسے حذف کرنے سے اکاؤنٹ مستقل طور پر ختم ہو جائے گا، اور جن مریضوں کو صرف آپ سنبھالتے ہیں ان کی تمام وائٹل ریڈنگز اور LiveHealthy: Medicine Reminder کی دوائیں، شیڈول اور ہسٹری بھی حذف ہو جائیں گی۔ جو مریض آپ کسی اور کے ساتھ شیئر کرتے ہیں وہ ان کے پاس رہیں گے — صرف آپ کی رسائی ختم ہو گی۔ اسے واپس نہیں کیا جا سکتا۔';
 
   @override
   String get deleteEverything => 'سب کچھ حذف کریں';

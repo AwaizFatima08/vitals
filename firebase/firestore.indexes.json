@@ -33,6 +33,24 @@
       "queryScope": "COLLECTION",
       "fields": [
         {
+          "fieldPath": "dateKey",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "status",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "scheduledAt",
+          "order": "ASCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "doseEvents",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
           "fieldPath": "medicineId",
           "order": "ASCENDING"
         },

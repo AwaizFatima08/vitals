@@ -1,15 +1,18 @@
-# Play Store Listing — LiveHealthy Vitals
+# Play Store Listing — LiveHealthy: Vitals
 
 Package: `com.homilabs.livehealthy_vitals` · Version 1.0.0 (1)
 
 ## App name (30 chars max)
-LiveHealthy Vitals
+LiveHealthy: Vitals
+
+(Home-screen label is just "Vitals", the same convention as LiveHealthy: Medicine Reminder,
+whose launcher label is "Medicine Reminder".)
 
 ## Short description (80 chars max)
 Log BP, oxygen, pulse, weight & blood sugar — big keypad, clear charts.
 
 ## Full description
-LiveHealthy Vitals is a simple home logbook for the numbers that matter: blood pressure,
+LiveHealthy: Vitals is a simple home logbook for the numbers that matter: blood pressure,
 oxygen saturation (SpO2), pulse, weight and blood glucose — for yourself or for a parent or
 family member you help look after.
 
@@ -32,7 +35,7 @@ your readings.
 
 **For families.**
 Track more than one person from one account, and switch between them with a tap. Your
-LiveHealthy account works across the LiveHealthy apps, including LiveHealthy-Medicine Reminder.
+LiveHealthy account works across the LiveHealthy apps, including LiveHealthy: Medicine Reminder.
 
 **Reminders only if you want them.**
 Optional daily reminders for any vital (for example "check fasting glucose every morning").
@@ -40,7 +43,7 @@ All reminders are off until you turn them on.
 
 **English and Urdu.**
 
-LiveHealthy Vitals doesn't measure anything itself and doesn't connect to Bluetooth devices.
+LiveHealthy: Vitals doesn't measure anything itself and doesn't connect to Bluetooth devices.
 You enter readings taken with your own BP monitor, oximeter, glucometer or scale.
 
 ## Category
@@ -49,8 +52,15 @@ Medical
 ## Tags / contact
 - Email: info@homilabs.org
 - Website: https://livehealthy.homilabs.org/
-- Privacy policy: https://livehealthy.homilabs.org/vitals-privacy-policy.html
-- Account deletion URL: https://livehealthy.homilabs.org/vitals-deleteaccount.html
+- Privacy policy: https://livehealthy.homilabs.org/privacy-policy.html  (shared by the whole LiveHealthy family)
+- Account deletion URL: https://livehealthy.homilabs.org/deleteaccount.html  (shared)
+
+## App access (Play Console → App content → App access)
+Sign-in is required. The account is shared, so use the **same Play-review demo account as
+LiveHealthy: Medicine Reminder**. It's created and reset by
+`live_healthy/scripts/create_playstore_review_account.js`, and its credentials are in
+`live_healthy/secrets/playstore_review_account.txt` (never committed). The account starts with
+no vital readings. Reviewers can add some, or you can add a few yourself before submitting.
 
 ## Content rating (IARC questionnaire)
 Category: Reference, News, or Educational / Utility. No violence, sexual content, profanity,
@@ -77,7 +87,7 @@ users can request deletion — in-app and via the deletion URL):
 | Personal info → Name | Yes | Account management, App functionality | Required |
 | Personal info → Email address | Yes | Account management | Required |
 | Health and fitness → Health info (vitals readings, height) | Yes | App functionality | Required to use core feature |
-| App info → Other user-generated content (reading notes) | Yes | App functionality | Optional |
+| App activity → Other user-generated content (reading notes) | Yes | App functionality | Optional |
 
 Not collected: location, contacts, photos/videos, audio, messages, financial info, web
 history, device/advertising IDs, app interactions/analytics, crash logs.

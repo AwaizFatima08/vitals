@@ -9,7 +9,7 @@ class AppLocalizationsEn extends AppLocalizations {
   AppLocalizationsEn([String locale = 'en']) : super(locale);
 
   @override
-  String get appTitle => 'LiveHealthy Vitals';
+  String get appTitle => 'LiveHealthy: Vitals';
 
   @override
   String get brandName => 'LiveHealthy';
@@ -42,7 +42,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get sharedAccountNote =>
-      'One LiveHealthy account works across all LiveHealthy apps, including Medicine Reminder.';
+      'One LiveHealthy account works across all LiveHealthy apps, including LiveHealthy: Medicine Reminder.';
 
   @override
   String get signIn => 'Sign in';
@@ -305,7 +305,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get onboardingDisclaimer =>
-      'LiveHealthy Vitals helps you keep a record of readings you take with your own devices. It does not measure anything itself and does not give medical advice.';
+      'LiveHealthy: Vitals helps you keep a record of readings you take with your own devices. It does not measure anything itself and does not give medical advice.';
 
   @override
   String get range7 => '7 days';
@@ -476,7 +476,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get deleteAccountBody =>
-      'Your LiveHealthy account is shared by all LiveHealthy apps. Deleting it permanently removes the account and, for every patient you solely manage, all their vital readings AND any Medicine Reminder medicines, schedules and history. Patients you share with another caregiver stay with them — you just lose access. This cannot be undone.';
+      'Your LiveHealthy account is shared by all LiveHealthy apps. Deleting it permanently removes the account and, for every patient you solely manage, all their vital readings AND any LiveHealthy: Medicine Reminder medicines, schedules and history. Patients you share with another caregiver stay with them — you just lose access. This cannot be undone.';
 
   @override
   String get deleteEverything => 'Delete everything';
