@@ -67,10 +67,9 @@ Real-font layout assertions for these now run in the on-device test.
   Firestore persists them locally and syncs later.
 
 ## Open items / needs the owner
-- **Deploy Firestore rules + index** (`firebase deploy --only firestore`). Until this is done,
-  production rejects Vitals reads/writes. Copy the same `firestore.rules` /
-  `firestore.indexes.json` into the Medicine Reminder repo so a deploy from there can't
-  remove the Vitals rules.
+- ~~Deploy Firestore rules + index~~ **Done.** Verified 2026-09-28: the production ruleset is
+  byte-identical to `firebase/firestore.rules` (released 2026-09-25 19:26 UTC), and the
+  `vitalReadings (type, measuredAt)` index is live. Both repos hold identical rules/index files.
 - **Upload the shared website** (`live_healthy/website/`: index, privacy-policy,
   terms-and-conditions, deleteaccount) to the Hostinger site root. As of 2026-09-28 these cover
   both apps. Vitals uses the same URLs; it has no separate pages.
