@@ -56,11 +56,14 @@ Medical
 - Account deletion URL: https://livehealthy.homilabs.org/deleteaccount.html  (shared)
 
 ## App access (Play Console → App content → App access)
-Sign-in is required. The account is shared, so use the **same Play-review demo account as
-LiveHealthy: Medicine Reminder**. It's created and reset by
-`live_healthy/scripts/create_playstore_review_account.js`, and its credentials are in
-`live_healthy/secrets/playstore_review_account.txt` (never committed). The account starts with
-no vital readings. Reviewers can add some, or you can add a few yourself before submitting.
+Sign-in is required. Vitals has its **own** review account, pre-filled with 30 days of demo
+readings: `playstore-reviewer-vitals@homilabs.org`. The password and a ready-to-paste
+instructions text are in `secrets/playstore_review_account.txt` (never committed).
+Create/refresh it with `cd scripts && npm install && node create_playstore_review_account.js`.
+Re-running keeps the password and refreshes the demo data; `--reset-password` rotates it (then
+update Play Console).
+It's kept separate from Medicine Reminder's reviewer on purpose, because that app's script
+rotates its password on every run.
 
 ## Content rating (IARC questionnaire)
 Category: Reference, News, or Educational / Utility. No violence, sexual content, profanity,

@@ -1,0 +1,8 @@
+{
+  "name": "livehealthy-vitals-scripts",
+  "private": true,
+  "description": "Admin scripts for LiveHealthy: Vitals (shared live-healthy-medreminder Firebase project). Not part of the app build.",
+  "dependencies": {
+    "firebase-admin": "^13.0.0"
+  }
+}
