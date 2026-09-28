@@ -76,10 +76,19 @@ controlled substances, gambling, or user-to-user communication. Expected: Everyo
 No ads.
 
 ## Health apps declaration (Play Console → App content → Health apps)
-- Features: health/fitness tracking (manually entered vital signs); medical reference ranges
-  shown as informational flags.
-- NOT a medical device; does not diagnose, treat or monitor via sensors; no regulatory
-  clearance claimed. Disclaimer shown on onboarding, home, history and in Settings.
+Tick exactly these:
+- Health and fitness → **Nutrition and weight management** (weight logging, BMI)
+- Medical → **Diseases and conditions management** (tracking BP / blood glucose over time)
+
+Leave unticked: Activity and fitness (not exercise tracking), Disease prevention and public
+health (not vaccination/screening/public-health info), Clinical decision support (flags are
+for the user, not clinicians), Medical device apps (measures nothing, connects to no device,
+makes no diagnostic claims), Medical reference and education, Medication and treatment
+management (that's Medicine Reminder), Other.
+
+NOT a medical device; no regulatory clearance claimed. The "informational only, not a
+diagnosis" disclaimer is shown on the welcome screen, home, history, in Settings, and in the
+terms.
 
 ## Data safety form
 Data collected (all "collected", none "shared" with third parties; encrypted in transit;
