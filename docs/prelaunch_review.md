@@ -66,6 +66,12 @@ Real-font layout assertions for these now run in the on-device test.
 - Offline: writes wait up to 4 s for a server acknowledgement, then are treated as queued.
   Firestore persists them locally and syncs later.
 
+## Submission status
+- 2026-09-28: v1.0.0 (versionCode 1) submitted to Google Play, now in review.
+- The shared website is verified live with the latest pages (index, privacy-policy,
+  terms-and-conditions, deleteaccount), and the privacy policy includes the Vitals disclosures.
+- The Play listing URL returns 404 until the app is approved (expected).
+
 ## Open items / needs the owner
 - ~~Deploy Firestore rules + index~~ **Done.** Verified 2026-09-28: the production ruleset is
   byte-identical to `firebase/firestore.rules` (released 2026-09-25 19:26 UTC), and the
