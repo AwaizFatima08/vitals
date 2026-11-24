@@ -547,4 +547,43 @@ class AppLocalizationsUr extends AppLocalizations {
   String homeBpBelow(String avg) {
     return '7 دن کی گھریلو اوسط $avg mmHg، جو 135/85 کی گھریلو حد سے کم ہے۔ ڈاکٹر کے مشورے کے مطابق ناپتے رہیں۔';
   }
+
+  @override
+  String get reportTitle => 'ڈاکٹر رپورٹ';
+
+  @override
+  String get reportButton => 'رپورٹ';
+
+  @override
+  String get reportIntro =>
+      'ہر وائٹل کا خلاصہ، چارٹ اور جدول، جو واٹس ایپ، ای میل یا پرنٹ کے ذریعے ڈاکٹر کو بھیجنے کے لیے تیار ہے۔';
+
+  @override
+  String get reportPeriodLabel => 'مدت';
+
+  @override
+  String get reportSharePdf => 'PDF رپورٹ بھیجیں';
+
+  @override
+  String get reportShareCsv => 'اسپریڈشیٹ (CSV) کے طور پر بھیجیں';
+
+  @override
+  String get reportNoReadings => 'اس مدت میں کوئی ریڈنگ نہیں۔ لمبی مدت منتخب کریں یا پہلے ریڈنگز درج کریں۔';
+
+  @override
+  String get reportFailed => 'رپورٹ نہیں بن سکی۔ دوبارہ کوشش کریں۔';
+
+  @override
+  String get reportEnglishNote => 'رپورٹ انگریزی میں ہے تاکہ کوئی بھی ڈاکٹر اسے پڑھ سکے۔';
+
+  @override
+  String reportCounts(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'اس مدت میں $count ریڈنگز',
+      one: 'اس مدت میں 1 ریڈنگ',
+    );
+    return '$_temp0';
+  }
 }

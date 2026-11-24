@@ -21,6 +21,7 @@ import 'services/auth_service.dart';
 import 'services/notification_service.dart';
 import 'services/patient_service.dart';
 import 'services/reminder_service.dart';
+import 'services/report_service.dart';
 import 'services/vital_service.dart';
 
 final GlobalKey<NavigatorState> rootNavigatorKey = GlobalKey<NavigatorState>();
@@ -99,6 +100,7 @@ class LiveHealthyVitalsApp extends StatelessWidget {
         Provider<AuthService>.value(value: authService),
         Provider<PatientService>.value(value: patientService),
         Provider<VitalService>.value(value: vitalService),
+        Provider<ReportService>(create: (_) => ReportService(vitalService: vitalService)),
         Provider<ReminderService>.value(value: reminderService),
         Provider<AccountDeletionService>.value(value: accountDeletionService),
         Provider<AdsController>.value(value: ads),

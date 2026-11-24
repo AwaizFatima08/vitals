@@ -1099,6 +1099,66 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'7-day home average {avg} mmHg, below the 135/85 home level guidelines use. Keep measuring as your doctor advises.'**
   String homeBpBelow(String avg);
+
+  /// No description provided for @reportTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Doctor report'**
+  String get reportTitle;
+
+  /// No description provided for @reportButton.
+  ///
+  /// In en, this message translates to:
+  /// **'Report'**
+  String get reportButton;
+
+  /// No description provided for @reportIntro.
+  ///
+  /// In en, this message translates to:
+  /// **'A summary, chart and table for each vital, ready to share with your doctor on WhatsApp, email or print.'**
+  String get reportIntro;
+
+  /// No description provided for @reportPeriodLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Period'**
+  String get reportPeriodLabel;
+
+  /// No description provided for @reportSharePdf.
+  ///
+  /// In en, this message translates to:
+  /// **'Share PDF report'**
+  String get reportSharePdf;
+
+  /// No description provided for @reportShareCsv.
+  ///
+  /// In en, this message translates to:
+  /// **'Share as spreadsheet (CSV)'**
+  String get reportShareCsv;
+
+  /// No description provided for @reportNoReadings.
+  ///
+  /// In en, this message translates to:
+  /// **'No readings in this period. Choose a longer period or log some readings first.'**
+  String get reportNoReadings;
+
+  /// No description provided for @reportFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'Could not create the report. Please try again.'**
+  String get reportFailed;
+
+  /// No description provided for @reportEnglishNote.
+  ///
+  /// In en, this message translates to:
+  /// **'The report is in English so any doctor can read it.'**
+  String get reportEnglishNote;
+
+  /// No description provided for @reportCounts.
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =1{1 reading} other{{count} readings}} in this period'**
+  String reportCounts(int count);
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

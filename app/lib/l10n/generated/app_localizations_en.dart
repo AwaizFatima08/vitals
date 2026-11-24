@@ -548,4 +548,38 @@ class AppLocalizationsEn extends AppLocalizations {
   String homeBpBelow(String avg) {
     return '7-day home average $avg mmHg, below the 135/85 home level guidelines use. Keep measuring as your doctor advises.';
   }
+
+  @override
+  String get reportTitle => 'Doctor report';
+
+  @override
+  String get reportButton => 'Report';
+
+  @override
+  String get reportIntro =>
+      'A summary, chart and table for each vital, ready to share with your doctor on WhatsApp, email or print.';
+
+  @override
+  String get reportPeriodLabel => 'Period';
+
+  @override
+  String get reportSharePdf => 'Share PDF report';
+
+  @override
+  String get reportShareCsv => 'Share as spreadsheet (CSV)';
+
+  @override
+  String get reportNoReadings => 'No readings in this period. Choose a longer period or log some readings first.';
+
+  @override
+  String get reportFailed => 'Could not create the report. Please try again.';
+
+  @override
+  String get reportEnglishNote => 'The report is in English so any doctor can read it.';
+
+  @override
+  String reportCounts(int count) {
+    String _temp0 = intl.Intl.pluralLogic(count, locale: localeName, other: '$count readings', one: '1 reading');
+    return '$_temp0 in this period';
+  }
 }

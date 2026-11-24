@@ -51,6 +51,16 @@ class VitalService {
     });
   }
 
+  /// One-off fetch (for the doctor report), oldest first.
+  Future<List<VitalReading>> fetchReadings(String patientId, VitalType type, {required DateTime since}) async {
+    final snap = await _readings(patientId)
+        .where('type', isEqualTo: type.key)
+        .where('measuredAt', isGreaterThanOrEqualTo: Timestamp.fromDate(since))
+        .orderBy('measuredAt', descending: true)
+        .get();
+    return _toReadings(snap).reversed.toList();
+  }
+
   List<VitalReading> _toReadings(QuerySnapshot<Map<String, dynamic>> snap) =>
       snap.docs.map(VitalReading.fromDoc).whereType<VitalReading>().toList();
 }

@@ -267,5 +267,22 @@
         "type": "String"
       }
     }
+  },
+  "reportTitle": "Doctor report",
+  "reportButton": "Report",
+  "reportIntro": "A summary, chart and table for each vital, ready to share with your doctor on WhatsApp, email or print.",
+  "reportPeriodLabel": "Period",
+  "reportSharePdf": "Share PDF report",
+  "reportShareCsv": "Share as spreadsheet (CSV)",
+  "reportNoReadings": "No readings in this period. Choose a longer period or log some readings first.",
+  "reportFailed": "Could not create the report. Please try again.",
+  "reportEnglishNote": "The report is in English so any doctor can read it.",
+  "reportCounts": "{count, plural, =1{1 reading} other{{count} readings}} in this period",
+  "@reportCounts": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
   }
 }

@@ -17,6 +17,7 @@ import '../../widgets/patient_switcher.dart';
 import '../entry/vital_entry_screen.dart';
 import '../history/vital_history_screen.dart';
 import '../patients/edit_patient_screen.dart';
+import '../report/report_screen.dart';
 
 /// One tile per vital (design doc §2 — no crowded all-in-one form): the
 /// latest reading with its flag, a big "+" to log a new one, and a tap
@@ -30,7 +31,22 @@ class VitalsHomeScreen extends StatelessWidget {
     if (patient == null) return const Scaffold(body: Center(child: CircularProgressIndicator()));
 
     return Scaffold(
-      appBar: AppBar(title: const PatientSwitcherTitle(), toolbarHeight: 72),
+      appBar: AppBar(
+        title: const PatientSwitcherTitle(),
+        toolbarHeight: 72,
+        actions: [
+          Padding(
+            padding: const EdgeInsetsDirectional.only(end: 8),
+            child: FilledButton.tonalIcon(
+              key: const ValueKey('open_report'),
+              style: FilledButton.styleFrom(minimumSize: const Size(48, 48)),
+              icon: const Icon(Icons.description_outlined),
+              label: Text(AppLocalizations.of(context).reportButton),
+              onPressed: () => Navigator.of(context).push(MaterialPageRoute(builder: (_) => const ReportScreen())),
+            ),
+          ),
+        ],
+      ),
       body: ListView(
         key: ValueKey('vitals_list_${patient.id}'),
         padding: const EdgeInsets.fromLTRB(16, 4, 16, 24),

@@ -372,4 +372,48 @@ void main() {
       expect(find.text('Who is this app for?'), findsOneWidget);
     });
   });
+
+  group('doctor report', () {
+    testWidgets('opens from home, counts readings in the period, enables sharing', (tester) async {
+      final h = await TestHarness.create();
+      final now = DateTime.now();
+      await seed(
+        h,
+        'p_self',
+        VitalReading(id: '', type: VitalType.pulse, value: 72, measuredAt: now, createdByUid: 'alice'),
+      );
+      await seed(
+        h,
+        'p_self',
+        VitalReading(
+          id: '',
+          type: VitalType.pulse,
+          value: 80,
+          measuredAt: now.subtract(const Duration(days: 20)),
+          createdByUid: 'alice',
+        ),
+      );
+      await h.pumpApp(tester);
+      await tester.tap(find.byKey(const ValueKey('open_report')));
+      await settle(tester, frames: 20);
+
+      expect(find.text('Doctor report'), findsOneWidget);
+      expect(find.text('2 readings in this period'), findsOneWidget); // default 30 days
+      expect(tester.widget<ButtonStyleButton>(find.byKey(const ValueKey('report_share_pdf'))).enabled, isTrue);
+
+      await tester.tap(find.text('7 days'));
+      await settle(tester, frames: 20);
+      expect(find.text('1 reading in this period'), findsOneWidget);
+    });
+
+    testWidgets('nothing to share: explains and disables both buttons', (tester) async {
+      final h = await TestHarness.create();
+      await h.pumpApp(tester);
+      await tester.tap(find.byKey(const ValueKey('open_report')));
+      await settle(tester, frames: 20);
+      expect(find.byKey(const ValueKey('report_empty')), findsOneWidget);
+      expect(tester.widget<ButtonStyleButton>(find.byKey(const ValueKey('report_share_pdf'))).enabled, isFalse);
+      expect(tester.widget<ButtonStyleButton>(find.byKey(const ValueKey('report_share_csv'))).enabled, isFalse);
+    });
+  });
 }
