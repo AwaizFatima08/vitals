@@ -62,8 +62,12 @@ Future<void> main() async {
 Future<void> _useEmulatorsIfRequested() async {
   const host = String.fromEnvironment('FIREBASE_EMULATOR_HOST');
   if (host.isEmpty || kReleaseMode) return;
-  FirebaseFirestore.instance.useFirestoreEmulator(host, 8085);
-  await FirebaseAuth.instance.useAuthEmulator(host, 9099);
+  // Ports are overridable so this app's emulators can run beside another
+  // project's on the same machine (firebase.e2e.json uses 8086/9098).
+  const firestorePort = int.fromEnvironment('FIREBASE_EMULATOR_FIRESTORE_PORT', defaultValue: 8085);
+  const authPort = int.fromEnvironment('FIREBASE_EMULATOR_AUTH_PORT', defaultValue: 9099);
+  FirebaseFirestore.instance.useFirestoreEmulator(host, firestorePort);
+  await FirebaseAuth.instance.useAuthEmulator(host, authPort);
   debugPrint('Using Firebase emulators at $host');
 }
 

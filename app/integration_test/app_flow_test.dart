@@ -9,6 +9,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:integration_test/integration_test.dart';
 import 'package:livehealthy_vitals/main.dart' as app;
+import 'package:livehealthy_vitals/models/patient.dart';
+import 'package:livehealthy_vitals/services/report_service.dart';
+import 'package:livehealthy_vitals/services/vital_service.dart';
 
 Future<void> pumpFor(WidgetTester tester, Duration d) async {
   final end = DateTime.now().add(d);
@@ -182,6 +185,7 @@ void main() {
 
     // --- Seed a month of history, then screenshot home + charts.
     await seedHistory(selfPatient.id, uid);
+    final selfPatientDoc = await FirebaseFirestore.instance.doc('patients/${selfPatient.id}').get();
     await pumpFor(tester, const Duration(seconds: 2));
     await tester.scrollUntilVisible(
       find.byKey(const ValueKey('tile_bloodPressure')),
@@ -195,6 +199,40 @@ void main() {
     await waitFor(tester, find.text('30 days'));
     await pumpFor(tester, const Duration(seconds: 1));
     await shot('05_bp_history');
+
+    // v1.1: summary card and the 7-day home BP check are on the BP history.
+    expect(find.byKey(const ValueKey('stats_card')), findsOneWidget);
+    await tester.scrollUntilVisible(
+      find.byKey(const ValueKey('home_bp_check')),
+      250,
+      scrollable: find.byType(Scrollable).last,
+    );
+    expect(find.byKey(const ValueKey('home_bp_check')), findsOneWidget);
+    // v1.1: test banner at the bottom (Google's test unit in debug builds).
+    // Ad delivery depends on Google's network, so this is reported, not asserted.
+    final bannerEnd = DateTime.now().add(const Duration(seconds: 20));
+    while (DateTime.now().isBefore(bannerEnd) && find.byKey(const ValueKey('ad_banner')).evaluate().isEmpty) {
+      await tester.pump(const Duration(milliseconds: 250));
+    }
+    final bannerShown = find.byKey(const ValueKey('ad_banner')).evaluate().isNotEmpty;
+    debugPrint('E2E: history banner shown = $bannerShown');
+    await shot('05b_bp_history_banner');
+    await tester.pageBack();
+    await pumpFor(tester, const Duration(seconds: 1));
+
+    // v1.1: doctor report — open, count, and build the PDF on the device
+    // (proves the bundled fonts load); the share sheet itself is not driven.
+    await scrollHomeTo(tester, find.byKey(const ValueKey('tile_bloodPressure')), delta: -250);
+    await tester.tap(find.byKey(const ValueKey('open_report')));
+    await waitFor(tester, find.byKey(const ValueKey('report_count')), timeout: const Duration(seconds: 20));
+    await shot('10_report');
+    final reportData = await tester.runAsync(
+      () => ReportService(vitalService: VitalService()).collect(Patient.fromDoc(selfPatientDoc), days: 30),
+    );
+    final (regular, bold) = (await tester.runAsync(ReportService.loadFonts))!;
+    final pdfBytes = (await tester.runAsync(() => ReportBuilder.pdf(reportData!, regular: regular, bold: bold)))!;
+    expect(String.fromCharCodes(pdfBytes.take(5)), '%PDF-');
+    debugPrint('E2E: report PDF ${pdfBytes.length} bytes, ${reportData!.readings.length} vitals');
     await tester.pageBack();
     await pumpFor(tester, const Duration(seconds: 1));
 

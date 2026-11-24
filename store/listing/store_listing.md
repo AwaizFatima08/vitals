@@ -1,6 +1,6 @@
 # Play Store Listing — LiveHealthy: Vitals
 
-Package: `com.homilabs.livehealthy_vitals` · Version 1.0.0 (1)
+Package: `com.homilabs.livehealthy_vitals` · Version 1.1.0 (2) — v1.0.0 (1) live since 2026-10-02
 
 ## App name (30 chars max)
 LiveHealthy: Vitals
@@ -127,6 +127,32 @@ No exact-alarm, full-screen-intent, camera, location, contacts or storage permis
   06 reminders · 07 patients · 08 Urdu
 - Raw 1080×2400 device captures: `store/graphics/screenshots/`
 - Icon/feature graphic source: `scripts/make_icons.py` (reproducible)
+
+## Release notes (v1.1.0) — "What's new" (500 chars max)
+English:
+New: free Doctor report. Share a PDF or spreadsheet of your readings with your doctor on
+WhatsApp or email. Each vital now shows a summary for the period: average, lowest, highest,
+and morning vs evening. New 7-day home BP check, the averaging method doctors use. This
+version shows a small ad on the history screens.
+
+Urdu:
+نیا: مفت ڈاکٹر رپورٹ — اپنی ریڈنگز کی PDF یا اسپریڈشیٹ واٹس ایپ یا ای میل پر ڈاکٹر کو بھیجیں۔ ہر وائٹل کا خلاصہ: اوسط، کم سے کم، زیادہ سے زیادہ، صبح اور شام۔ نیا 7 دن کا گھریلو بلڈ پریشر چیک۔ اس ورژن میں ہسٹری اسکرین پر ایک چھوٹا اشتہار ہے۔
+
+## v1.1 Play Console changes (ads)
+- **Ads declaration** (App content → Ads): "Yes, my app contains ads".
+- **Data safety:** keep everything above, and ADD the following (Google Mobile Ads SDK).
+  Data is encrypted in transit; users can request deletion.
+
+  | Data type | Collected | Shared | Purposes |
+  |---|---|---|---|
+  | Device or other IDs (advertising ID, app set ID) | Yes | Yes | Advertising or marketing, Analytics, Fraud prevention/security |
+  | App activity → App interactions | Yes | Yes | Advertising or marketing, Analytics |
+  | App info and performance → Diagnostics | Yes | Yes | Analytics, Fraud prevention/security |
+  | Location → Approximate location (from IP) | Yes | Yes | Advertising or marketing, Fraud prevention/security |
+
+  Health info stays **collected, not shared**. It never goes to the ad SDK.
+- **Health apps declaration:** unchanged.
+- **Store listing:** Play shows "Contains ads" automatically once the declaration is saved.
 
 ## Release notes (v1.0.0)
 First release: log blood pressure, SpO2, pulse, weight and blood glucose; BMI; 7/30/90-day
