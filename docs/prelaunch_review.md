@@ -70,7 +70,12 @@ Real-font layout assertions for these now run in the on-device test.
 - 2026-09-28: v1.0.0 (versionCode 1) submitted to Google Play, now in review.
 - The shared website is verified live with the latest pages (index, privacy-policy,
   terms-and-conditions, deleteaccount), and the privacy policy includes the Vitals disclosures.
-- The Play listing URL returns 404 until the app is approved (expected).
+- 2026-10-02: **approved and live in production** on Google Play:
+  https://play.google.com/store/apps/details?id=com.homilabs.livehealthy_vitals
+  The website's "View on Play Store" button is verified pointing to it.
+- Next: collect about a month of feedback (Play reviews, ratings, Android vitals for crashes and
+  ANRs, and how much reminders get used), then decide on v1.1. The build number must go up
+  (`1.0.0+1` → e.g. `1.1.0+2`).
 
 ## Open items / needs the owner
 - ~~Deploy Firestore rules + index~~ **Done.** Verified 2026-09-28: the production ruleset is
