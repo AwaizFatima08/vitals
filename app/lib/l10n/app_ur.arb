@@ -1,11 +1,9 @@
 {
   "@@locale": "ur",
-
   "appTitle": "LiveHealthy: Vitals",
   "brandName": "LiveHealthy",
   "appSubtitle": "وائٹلز",
   "tagline": "بلڈ پریشر، آکسیجن، نبض، وزن اور بلڈ شوگر — آسانی سے درج کریں۔",
-
   "onboardingTitle": "یہ ایپ کس کے لیے ہے؟",
   "onboardingJustMe": "صرف میرے لیے",
   "onboardingJustMeSubtitle": "میں اپنی ریڈنگز خود درج کروں گا/گی",
@@ -13,7 +11,6 @@
   "onboardingFamilySubtitle": "والدین، شریکِ حیات یا کسی اور کے لیے",
   "haveAccountSignIn": "پہلے سے LiveHealthy ایپ استعمال کرتے ہیں؟ سائن ان کریں",
   "sharedAccountNote": "ایک LiveHealthy اکاؤنٹ تمام LiveHealthy ایپس میں چلتا ہے، بشمول LiveHealthy: Medicine Reminder۔",
-
   "signIn": "سائن ان",
   "signUp": "اکاؤنٹ بنائیں",
   "email": "ای میل",
@@ -34,12 +31,10 @@
   "errorGeneric": "کچھ غلط ہو گیا۔ دوبارہ کوشش کریں۔",
   "alreadyHaveAccount": "پہلے سے اکاؤنٹ ہے؟ سائن ان کریں",
   "noAccountCreate": "LiveHealthy پر نئے ہیں؟ اکاؤنٹ بنائیں",
-
   "navVitals": "وائٹلز",
   "navPatients": "مریض",
   "navReminders": "یاد دہانیاں",
   "navSettings": "ترتیبات",
-
   "vitalBloodPressure": "بلڈ پریشر",
   "vitalSpo2": "آکسیجن (SpO2)",
   "vitalPulse": "نبض",
@@ -48,14 +43,12 @@
   "bmi": "BMI",
   "systolic": "اوپر والا (سسٹولک)",
   "diastolic": "نیچے والا (ڈائسٹولک)",
-
   "glucoseFasting": "نہار منہ",
   "glucoseBeforeMeal": "کھانے سے پہلے",
   "glucoseAfterMeal": "کھانے کے بعد",
   "glucoseRandom": "کسی بھی وقت",
   "glucoseContextLabel": "ریڈنگ کب لی گئی؟",
   "selectGlucoseContext": "منتخب کریں کہ ریڈنگ کب لی گئی",
-
   "noReadingsYet": "ابھی کوئی ریڈنگ نہیں",
   "addReading": "ریڈنگ درج کریں",
   "addVitalReading": "{vital} درج کریں",
@@ -74,11 +67,9 @@
   "deleteReadingTitle": "یہ ریڈنگ حذف کریں؟",
   "deleteReadingBody": "یہ ریڈنگ ہسٹری اور چارٹ سے ہٹ جائے گی۔ اسے واپس نہیں لایا جا سکتا۔",
   "futureTimeError": "ریڈنگ کا وقت آنے والا وقت نہیں ہو سکتا۔",
-
   "validationRequired": "قدر درج کریں",
   "validationOutOfRange": "یہ قدر چیک کریں — {min} سے {max} {unit} متوقع ہے",
   "validationDiastolic": "نیچے والا نمبر اوپر والے نمبر سے کم ہونا چاہیے",
-
   "rangeBpNormal": "نارمل",
   "rangeBpElevated": "قدرے زیادہ",
   "rangeBpStage1": "ہائی (اسٹیج 1)",
@@ -98,27 +89,23 @@
   "rangeBmiNormal": "نارمل",
   "rangeBmiOverweight": "زیادہ وزن",
   "rangeBmiObese": "موٹاپا",
-
   "urgentBp": "یہ ریڈنگ بہت زیادہ ہے۔ اگر یہ اسی طرح زیادہ رہے، یا سینے میں درد، سانس پھولنا، کمزوری یا نظر میں تبدیلی ہو تو فوری طبی مدد حاصل کریں۔",
   "urgentSpo2": "آکسیجن کی یہ سطح بہت کم ہے۔ اگر ریڈنگ درست ہے (آلے کی غلطی نہیں) تو جلد طبی مدد حاصل کریں۔",
   "disclaimerShort": "رنگین نشانات بالغوں کی عمومی حدود پر مبنی ہیں۔ صرف معلومات کے لیے — یہ تشخیص نہیں۔ اپنی ریڈنگز کے بارے میں اپنے ڈاکٹر سے بات کریں۔",
   "disclaimerLimitations": "یہ حدود بالغوں کے لیے ہیں۔ یہ بچوں، حمل، کھلاڑیوں، یا ایسی دوائیں لینے والوں کے لیے موزوں نہیں ہو سکتیں جو دل کی دھڑکن، بلڈ پریشر یا بلڈ شوگر پر اثر ڈالتی ہیں۔",
   "onboardingDisclaimer": "LiveHealthy: Vitals آپ کے اپنے آلات سے لی گئی ریڈنگز کا ریکارڈ رکھنے میں مدد دیتی ہے۔ یہ خود کچھ نہیں ناپتی اور طبی مشورہ نہیں دیتی۔",
-
   "range7": "7 دن",
   "range30": "30 دن",
   "range90": "90 دن",
   "chartEmpty": "اس مدت میں کوئی ریڈنگ نہیں",
   "historyTitle": "ہسٹری",
   "readingsCount": "{count, plural, =1{1 ریڈنگ} other{{count} ریڈنگز}}",
-
   "bmiNeedsHeight": "BMI دیکھنے کے لیے قد درج کریں",
   "bmiNeedsWeight": "BMI دیکھنے کے لیے وزن درج کریں",
   "bmiFromLatest": "تازہ ترین وزن اور قد {height} سینٹی میٹر سے",
   "addHeight": "قد درج کریں",
   "heightCm": "قد (سینٹی میٹر)",
   "heightHelp": "BMI کے حساب کے لیے۔ آپ بعد میں بھی درج کر سکتے ہیں۔",
-
   "patientsTitle": "مریض",
   "addPatient": "مریض شامل کریں",
   "editPatient": "مریض میں ترمیم",
@@ -136,7 +123,6 @@
   "firstFamilyMemberPrompt": "خاندان کے اس فرد کو شامل کریں جس کے وائٹلز آپ رکھیں گے۔",
   "noPatientsPrompt": "پہلا فرد شامل کریں جس کے وائٹلز آپ رکھیں گے۔",
   "sharedWithCaregivers": "دوسرے نگہداشت کرنے والوں کے ساتھ شیئرڈ",
-
   "remindersTitle": "یاد دہانیاں",
   "remindersIntro": "اختیاری۔ کسی وائٹل کو چیک کرنے کے لیے روزانہ ہلکی سی اطلاع حاصل کریں۔ جب تک آپ آن نہ کریں، ہر یاد دہانی بند رہتی ہے۔",
   "remindersFor": "{patient} کے لیے",
@@ -146,7 +132,6 @@
   "reminderNotificationBody": "{patient} کی ریڈنگ درج کرنے کے لیے ٹیپ کریں۔",
   "reminderNotificationBodySelf": "اپنی ریڈنگ درج کرنے کے لیے ٹیپ کریں۔",
   "notificationsBlocked": "اس ایپ کی اطلاعات بند ہیں۔ یاد دہانیاں حاصل کرنے کے لیے فون کی ترتیبات میں انہیں آن کریں۔",
-
   "settingsTitle": "ترتیبات",
   "languageEnglish": "English",
   "languageUrdu": "اردو (Urdu)",
@@ -166,8 +151,21 @@
   "deleteFailed": "اکاؤنٹ حذف نہیں ہو سکا۔ دوبارہ کوشش کریں۔",
   "version": "ورژن {version}",
   "ok": "ٹھیک ہے",
-
   "adLabel": "اشتہار",
   "adPrivacyOptions": "اشتہارات کی پرائیویسی ترتیبات",
-  "adPrivacyOptionsSubtitle": "اشتہارات کے لیے اپنی رضامندی دیکھیں یا تبدیل کریں"
+  "adPrivacyOptionsSubtitle": "اشتہارات کے لیے اپنی رضامندی دیکھیں یا تبدیل کریں",
+  "statsTitle": "اس مدت کا خلاصہ",
+  "statsAverage": "اوسط",
+  "statsLowest": "سب سے کم",
+  "statsHighest": "سب سے زیادہ",
+  "statsMorning": "صبح کی اوسط",
+  "statsEvening": "شام کی اوسط",
+  "statsFastingAvg": "نہار منہ / کھانے سے پہلے کی اوسط",
+  "statsAfterMealAvg": "کھانے کے بعد / کسی بھی وقت کی اوسط",
+  "statsInRange": "{percent}% ریڈنگز نارمل حد میں",
+  "homeBpTitle": "7 دن کا گھریلو بلڈ پریشر چیک",
+  "homeBpHow": "ڈاکٹر اس طرح ناپنے کو کہتے ہیں: 5 منٹ آرام سے بیٹھیں، 1 منٹ کے وقفے سے 2 ریڈنگز لیں، 7 دن تک ہر صبح اور شام۔ پہلا دن شمار نہیں ہوتا۔",
+  "homeBpNeedsMore": "اب تک: {days} دنوں میں {readings} ریڈنگز (پہلا دن شمار نہیں)۔ 7 دن کی اوسط کے لیے کم از کم 3 دنوں میں 12 ریڈنگز چاہئیں۔",
+  "homeBpAbove": "7 دن کی گھریلو اوسط {avg} mmHg۔ یہ 135/85 یا اس سے زیادہ ہے، وہ گھریلو حد جس پر رہنما اصول ہائی بلڈ پریشر کا اشارہ دیتے ہیں۔ یہ اپنے ڈاکٹر کو دکھائیں۔",
+  "homeBpBelow": "7 دن کی گھریلو اوسط {avg} mmHg، جو 135/85 کی گھریلو حد سے کم ہے۔ ڈاکٹر کے مشورے کے مطابق ناپتے رہیں۔"
 }

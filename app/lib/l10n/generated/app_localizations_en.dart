@@ -497,4 +497,55 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get adPrivacyOptionsSubtitle => 'Review or change your ad consent choices';
+
+  @override
+  String get statsTitle => 'Summary for this period';
+
+  @override
+  String get statsAverage => 'Average';
+
+  @override
+  String get statsLowest => 'Lowest';
+
+  @override
+  String get statsHighest => 'Highest';
+
+  @override
+  String get statsMorning => 'Morning average';
+
+  @override
+  String get statsEvening => 'Evening average';
+
+  @override
+  String get statsFastingAvg => 'Fasting / before meal average';
+
+  @override
+  String get statsAfterMealAvg => 'After meal / random average';
+
+  @override
+  String statsInRange(int percent) {
+    return '$percent% of readings in the normal range';
+  }
+
+  @override
+  String get homeBpTitle => '7-day home BP check';
+
+  @override
+  String get homeBpHow =>
+      'How doctors ask you to measure: sit quietly for 5 minutes, take 2 readings 1 minute apart, every morning and evening for 7 days. The first day is not counted.';
+
+  @override
+  String homeBpNeedsMore(int readings, int days) {
+    return 'So far: $readings readings over $days days (first day not counted). The 7-day average needs at least 12 readings over 3 days.';
+  }
+
+  @override
+  String homeBpAbove(String avg) {
+    return '7-day home average $avg mmHg. That is at or above 135/85, the home level guidelines use to suggest high blood pressure. Show this to your doctor.';
+  }
+
+  @override
+  String homeBpBelow(String avg) {
+    return '7-day home average $avg mmHg, below the 135/85 home level guidelines use. Keep measuring as your doctor advises.';
+  }
 }

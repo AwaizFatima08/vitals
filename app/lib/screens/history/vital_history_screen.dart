@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 
 import '../../core/app_state.dart';
 import '../../core/vitals/bmi.dart';
+import '../../core/vitals/stats.dart';
 import '../../core/vitals/vital_type.dart';
 import '../../l10n/generated/app_localizations.dart';
 import '../../l10n/vital_labels.dart';
@@ -14,6 +15,7 @@ import '../../widgets/ad_banner.dart';
 import '../../widgets/cached_stream_builder.dart';
 import '../../widgets/flag_chip.dart';
 import '../../widgets/formatters.dart';
+import '../../widgets/stats_cards.dart';
 import '../../widgets/vital_chart.dart';
 import '../entry/vital_entry_screen.dart';
 
@@ -109,6 +111,16 @@ class _VitalHistoryScreenState extends State<VitalHistoryScreen> {
                   ),
                 ),
               ),
+              if (readings.isNotEmpty) ...[
+                const SizedBox(height: 12),
+                VitalStatsCard(stats: VitalStats.compute(widget.type, readings, heightCm: patient.heightCm)),
+              ],
+              // The selected period is always >= 7 days, so it contains the
+              // whole 7-day window the protocol needs.
+              if (widget.type == VitalType.bloodPressure) ...[
+                const SizedBox(height: 12),
+                HomeBpCheckCard(check: HomeBpProtocol.evaluate(readings, now: DateTime.now())),
+              ],
               const SizedBox(height: 16),
               Text(l10n.readingsCount(readings.length), style: theme.textTheme.titleSmall),
               const SizedBox(height: 8),

@@ -1015,6 +1015,90 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Review or change your ad consent choices'**
   String get adPrivacyOptionsSubtitle;
+
+  /// No description provided for @statsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Summary for this period'**
+  String get statsTitle;
+
+  /// No description provided for @statsAverage.
+  ///
+  /// In en, this message translates to:
+  /// **'Average'**
+  String get statsAverage;
+
+  /// No description provided for @statsLowest.
+  ///
+  /// In en, this message translates to:
+  /// **'Lowest'**
+  String get statsLowest;
+
+  /// No description provided for @statsHighest.
+  ///
+  /// In en, this message translates to:
+  /// **'Highest'**
+  String get statsHighest;
+
+  /// No description provided for @statsMorning.
+  ///
+  /// In en, this message translates to:
+  /// **'Morning average'**
+  String get statsMorning;
+
+  /// No description provided for @statsEvening.
+  ///
+  /// In en, this message translates to:
+  /// **'Evening average'**
+  String get statsEvening;
+
+  /// No description provided for @statsFastingAvg.
+  ///
+  /// In en, this message translates to:
+  /// **'Fasting / before meal average'**
+  String get statsFastingAvg;
+
+  /// No description provided for @statsAfterMealAvg.
+  ///
+  /// In en, this message translates to:
+  /// **'After meal / random average'**
+  String get statsAfterMealAvg;
+
+  /// No description provided for @statsInRange.
+  ///
+  /// In en, this message translates to:
+  /// **'{percent}% of readings in the normal range'**
+  String statsInRange(int percent);
+
+  /// No description provided for @homeBpTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'7-day home BP check'**
+  String get homeBpTitle;
+
+  /// No description provided for @homeBpHow.
+  ///
+  /// In en, this message translates to:
+  /// **'How doctors ask you to measure: sit quietly for 5 minutes, take 2 readings 1 minute apart, every morning and evening for 7 days. The first day is not counted.'**
+  String get homeBpHow;
+
+  /// No description provided for @homeBpNeedsMore.
+  ///
+  /// In en, this message translates to:
+  /// **'So far: {readings} readings over {days} days (first day not counted). The 7-day average needs at least 12 readings over 3 days.'**
+  String homeBpNeedsMore(int readings, int days);
+
+  /// No description provided for @homeBpAbove.
+  ///
+  /// In en, this message translates to:
+  /// **'7-day home average {avg} mmHg. That is at or above 135/85, the home level guidelines use to suggest high blood pressure. Show this to your doctor.'**
+  String homeBpAbove(String avg);
+
+  /// No description provided for @homeBpBelow.
+  ///
+  /// In en, this message translates to:
+  /// **'7-day home average {avg} mmHg, below the 135/85 home level guidelines use. Keep measuring as your doctor advises.'**
+  String homeBpBelow(String avg);
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

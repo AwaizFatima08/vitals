@@ -290,7 +290,10 @@ void main() {
       expect(find.text('3 readings'), findsOneWidget);
 
       // Edit the 110 reading down to 100.
-      await tester.tap(find.textContaining('110', findRichText: true));
+      // last = the reading row (the summary card above also shows 110 as Highest)
+      await tester.ensureVisible(find.textContaining('110', findRichText: true).last);
+      await tester.pump();
+      await tester.tap(find.textContaining('110', findRichText: true).last);
       await settle(tester);
       expect(find.text('Edit reading'), findsOneWidget);
       await tester.tap(find.byKey(const ValueKey('key_backspace')));
@@ -298,10 +301,12 @@ void main() {
       await tapKeys(tester, '00');
       await tester.tap(find.byKey(const ValueKey('save_reading')));
       await settle(tester, frames: 20);
-      expect(find.textContaining('100 bpm', findRichText: true), findsOneWidget);
+      expect(find.textContaining('100 bpm', findRichText: true), findsWidgets);
 
       // Delete it.
-      await tester.tap(find.textContaining('100 bpm', findRichText: true));
+      await tester.ensureVisible(find.textContaining('100 bpm', findRichText: true).last);
+      await tester.pump();
+      await tester.tap(find.textContaining('100 bpm', findRichText: true).last);
       await settle(tester);
       await tester.tap(find.byKey(const ValueKey('delete_reading')));
       await settle(tester);

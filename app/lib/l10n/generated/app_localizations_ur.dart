@@ -496,4 +496,55 @@ class AppLocalizationsUr extends AppLocalizations {
 
   @override
   String get adPrivacyOptionsSubtitle => 'اشتہارات کے لیے اپنی رضامندی دیکھیں یا تبدیل کریں';
+
+  @override
+  String get statsTitle => 'اس مدت کا خلاصہ';
+
+  @override
+  String get statsAverage => 'اوسط';
+
+  @override
+  String get statsLowest => 'سب سے کم';
+
+  @override
+  String get statsHighest => 'سب سے زیادہ';
+
+  @override
+  String get statsMorning => 'صبح کی اوسط';
+
+  @override
+  String get statsEvening => 'شام کی اوسط';
+
+  @override
+  String get statsFastingAvg => 'نہار منہ / کھانے سے پہلے کی اوسط';
+
+  @override
+  String get statsAfterMealAvg => 'کھانے کے بعد / کسی بھی وقت کی اوسط';
+
+  @override
+  String statsInRange(int percent) {
+    return '$percent% ریڈنگز نارمل حد میں';
+  }
+
+  @override
+  String get homeBpTitle => '7 دن کا گھریلو بلڈ پریشر چیک';
+
+  @override
+  String get homeBpHow =>
+      'ڈاکٹر اس طرح ناپنے کو کہتے ہیں: 5 منٹ آرام سے بیٹھیں، 1 منٹ کے وقفے سے 2 ریڈنگز لیں، 7 دن تک ہر صبح اور شام۔ پہلا دن شمار نہیں ہوتا۔';
+
+  @override
+  String homeBpNeedsMore(int readings, int days) {
+    return 'اب تک: $days دنوں میں $readings ریڈنگز (پہلا دن شمار نہیں)۔ 7 دن کی اوسط کے لیے کم از کم 3 دنوں میں 12 ریڈنگز چاہئیں۔';
+  }
+
+  @override
+  String homeBpAbove(String avg) {
+    return '7 دن کی گھریلو اوسط $avg mmHg۔ یہ 135/85 یا اس سے زیادہ ہے، وہ گھریلو حد جس پر رہنما اصول ہائی بلڈ پریشر کا اشارہ دیتے ہیں۔ یہ اپنے ڈاکٹر کو دکھائیں۔';
+  }
+
+  @override
+  String homeBpBelow(String avg) {
+    return '7 دن کی گھریلو اوسط $avg mmHg، جو 135/85 کی گھریلو حد سے کم ہے۔ ڈاکٹر کے مشورے کے مطابق ناپتے رہیں۔';
+  }
 }

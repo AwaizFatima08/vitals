@@ -1,11 +1,9 @@
 {
   "@@locale": "en",
-
   "appTitle": "LiveHealthy: Vitals",
   "brandName": "LiveHealthy",
   "appSubtitle": "Vitals",
   "tagline": "Log blood pressure, oxygen, pulse, weight and blood sugar — simply.",
-
   "onboardingTitle": "Who is this app for?",
   "onboardingJustMe": "Just me",
   "onboardingJustMeSubtitle": "I'll log my own readings",
@@ -13,7 +11,6 @@
   "onboardingFamilySubtitle": "For a parent, spouse, or someone else",
   "haveAccountSignIn": "Already use a LiveHealthy app? Sign in",
   "sharedAccountNote": "One LiveHealthy account works across all LiveHealthy apps, including LiveHealthy: Medicine Reminder.",
-
   "signIn": "Sign in",
   "signUp": "Create account",
   "email": "Email",
@@ -34,12 +31,10 @@
   "errorGeneric": "Something went wrong. Please try again.",
   "alreadyHaveAccount": "Already have an account? Sign in",
   "noAccountCreate": "New to LiveHealthy? Create an account",
-
   "navVitals": "Vitals",
   "navPatients": "Patients",
   "navReminders": "Reminders",
   "navSettings": "Settings",
-
   "vitalBloodPressure": "Blood pressure",
   "vitalSpo2": "Oxygen (SpO2)",
   "vitalPulse": "Pulse",
@@ -48,18 +43,22 @@
   "bmi": "BMI",
   "systolic": "Upper (systolic)",
   "diastolic": "Lower (diastolic)",
-
   "glucoseFasting": "Fasting",
   "glucoseBeforeMeal": "Before meal",
   "glucoseAfterMeal": "After meal",
   "glucoseRandom": "Random",
   "glucoseContextLabel": "When was it taken?",
   "selectGlucoseContext": "Choose when the reading was taken",
-
   "noReadingsYet": "No readings yet",
   "addReading": "Add reading",
   "addVitalReading": "Add {vital}",
-  "@addVitalReading": {"placeholders": {"vital": {"type": "String"}}},
+  "@addVitalReading": {
+    "placeholders": {
+      "vital": {
+        "type": "String"
+      }
+    }
+  },
   "editReading": "Edit reading",
   "measuredAt": "Taken",
   "change": "Change",
@@ -75,12 +74,22 @@
   "deleteReadingTitle": "Delete this reading?",
   "deleteReadingBody": "This removes the reading from history and charts. It cannot be undone.",
   "futureTimeError": "The reading time can't be in the future.",
-
   "validationRequired": "Enter a value",
   "validationOutOfRange": "Check this value — expected {min} to {max} {unit}",
-  "@validationOutOfRange": {"placeholders": {"min": {"type": "String"}, "max": {"type": "String"}, "unit": {"type": "String"}}},
+  "@validationOutOfRange": {
+    "placeholders": {
+      "min": {
+        "type": "String"
+      },
+      "max": {
+        "type": "String"
+      },
+      "unit": {
+        "type": "String"
+      }
+    }
+  },
   "validationDiastolic": "The lower number must be less than the upper number",
-
   "rangeBpNormal": "Normal",
   "rangeBpElevated": "Elevated",
   "rangeBpStage1": "High (Stage 1)",
@@ -100,29 +109,37 @@
   "rangeBmiNormal": "Normal",
   "rangeBmiOverweight": "Overweight",
   "rangeBmiObese": "Obese",
-
   "urgentBp": "This reading is very high. If it stays this high, or there is chest pain, shortness of breath, weakness, or vision changes, seek urgent medical care.",
   "urgentSpo2": "This oxygen level is very low. If the reading is correct (not a device error), seek medical care promptly.",
   "disclaimerShort": "Colour flags use general adult reference ranges. For information only — not a diagnosis. Talk to your doctor about your readings.",
   "disclaimerLimitations": "These ranges are for adults. They may not suit children, pregnancy, athletes, or people on medicines that affect heart rate, blood pressure or blood sugar.",
   "onboardingDisclaimer": "LiveHealthy: Vitals helps you keep a record of readings you take with your own devices. It does not measure anything itself and does not give medical advice.",
-
   "range7": "7 days",
   "range30": "30 days",
   "range90": "90 days",
   "chartEmpty": "No readings in this period",
   "historyTitle": "History",
   "readingsCount": "{count, plural, =1{1 reading} other{{count} readings}}",
-  "@readingsCount": {"placeholders": {"count": {"type": "int"}}},
-
+  "@readingsCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
   "bmiNeedsHeight": "Add height to see BMI",
   "bmiNeedsWeight": "Log a weight to see BMI",
   "bmiFromLatest": "From latest weight and height {height} cm",
-  "@bmiFromLatest": {"placeholders": {"height": {"type": "String"}}},
+  "@bmiFromLatest": {
+    "placeholders": {
+      "height": {
+        "type": "String"
+      }
+    }
+  },
   "addHeight": "Add height",
   "heightCm": "Height (cm)",
   "heightHelp": "Used to calculate BMI. You can add it later.",
-
   "patientsTitle": "Patients",
   "addPatient": "Add a patient",
   "editPatient": "Edit patient",
@@ -140,21 +157,43 @@
   "firstFamilyMemberPrompt": "Add the family member whose vitals you'll be tracking.",
   "noPatientsPrompt": "Add the first person whose vitals you'll track.",
   "sharedWithCaregivers": "Shared with other caregivers",
-
   "remindersTitle": "Reminders",
   "remindersIntro": "Optional. Get a gentle daily notification to check a vital. Every reminder is off unless you turn it on.",
   "remindersFor": "For {patient}",
-  "@remindersFor": {"placeholders": {"patient": {"type": "String"}}},
+  "@remindersFor": {
+    "placeholders": {
+      "patient": {
+        "type": "String"
+      }
+    }
+  },
   "reminderAt": "Daily at {time}",
-  "@reminderAt": {"placeholders": {"time": {"type": "String"}}},
+  "@reminderAt": {
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
   "reminderOff": "Off",
   "reminderNotificationTitle": "Time to check {vital}",
-  "@reminderNotificationTitle": {"placeholders": {"vital": {"type": "String"}}},
+  "@reminderNotificationTitle": {
+    "placeholders": {
+      "vital": {
+        "type": "String"
+      }
+    }
+  },
   "reminderNotificationBody": "Tap to log {patient}'s reading.",
-  "@reminderNotificationBody": {"placeholders": {"patient": {"type": "String"}}},
+  "@reminderNotificationBody": {
+    "placeholders": {
+      "patient": {
+        "type": "String"
+      }
+    }
+  },
   "reminderNotificationBodySelf": "Tap to log your reading.",
   "notificationsBlocked": "Notifications are turned off for this app. Turn them on in your phone's settings to get reminders.",
-
   "settingsTitle": "Settings",
   "languageEnglish": "English",
   "languageUrdu": "اردو (Urdu)",
@@ -173,10 +212,60 @@
   "passwordMismatch": "That password didn't match. Please try again.",
   "deleteFailed": "Could not delete your account. Please try again.",
   "version": "Version {version}",
-  "@version": {"placeholders": {"version": {"type": "String"}}},
+  "@version": {
+    "placeholders": {
+      "version": {
+        "type": "String"
+      }
+    }
+  },
   "ok": "OK",
-
   "adLabel": "Advertisement",
   "adPrivacyOptions": "Privacy options for ads",
-  "adPrivacyOptionsSubtitle": "Review or change your ad consent choices"
+  "adPrivacyOptionsSubtitle": "Review or change your ad consent choices",
+  "statsTitle": "Summary for this period",
+  "statsAverage": "Average",
+  "statsLowest": "Lowest",
+  "statsHighest": "Highest",
+  "statsMorning": "Morning average",
+  "statsEvening": "Evening average",
+  "statsFastingAvg": "Fasting / before meal average",
+  "statsAfterMealAvg": "After meal / random average",
+  "statsInRange": "{percent}% of readings in the normal range",
+  "@statsInRange": {
+    "placeholders": {
+      "percent": {
+        "type": "int"
+      }
+    }
+  },
+  "homeBpTitle": "7-day home BP check",
+  "homeBpHow": "How doctors ask you to measure: sit quietly for 5 minutes, take 2 readings 1 minute apart, every morning and evening for 7 days. The first day is not counted.",
+  "homeBpNeedsMore": "So far: {readings} readings over {days} days (first day not counted). The 7-day average needs at least 12 readings over 3 days.",
+  "@homeBpNeedsMore": {
+    "placeholders": {
+      "readings": {
+        "type": "int"
+      },
+      "days": {
+        "type": "int"
+      }
+    }
+  },
+  "homeBpAbove": "7-day home average {avg} mmHg. That is at or above 135/85, the home level guidelines use to suggest high blood pressure. Show this to your doctor.",
+  "@homeBpAbove": {
+    "placeholders": {
+      "avg": {
+        "type": "String"
+      }
+    }
+  },
+  "homeBpBelow": "7-day home average {avg} mmHg, below the 135/85 home level guidelines use. Keep measuring as your doctor advises.",
+  "@homeBpBelow": {
+    "placeholders": {
+      "avg": {
+        "type": "String"
+      }
+    }
+  }
 }
