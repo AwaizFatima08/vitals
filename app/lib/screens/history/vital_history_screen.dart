@@ -8,7 +8,9 @@ import '../../l10n/generated/app_localizations.dart';
 import '../../l10n/vital_labels.dart';
 import '../../models/patient.dart';
 import '../../models/vital_reading.dart';
+import '../../services/ads_service.dart';
 import '../../services/vital_service.dart';
+import '../../widgets/ad_banner.dart';
 import '../../widgets/cached_stream_builder.dart';
 import '../../widgets/flag_chip.dart';
 import '../../widgets/formatters.dart';
@@ -45,17 +47,29 @@ class _VitalHistoryScreenState extends State<VitalHistoryScreen> {
     final to = today.add(const Duration(days: 1));
 
     return Scaffold(
-      appBar: AppBar(title: Text(name)),
-      floatingActionButton: FloatingActionButton.extended(
-        key: const ValueKey('history_add'),
-        icon: const Icon(Icons.add),
-        label: Text(l10n.addReading),
-        onPressed: () => Navigator.of(context).push(
-          MaterialPageRoute(
-            builder: (_) => VitalEntryScreen(patient: patient, type: widget.type),
+      appBar: AppBar(
+        title: Text(name),
+        // "Add reading" lives up here rather than as a floating button: the
+        // bottom edge holds the ad banner, and a floating button right above
+        // a banner invites accidental ad taps (AdMob placement policy).
+        actions: [
+          Padding(
+            padding: const EdgeInsetsDirectional.only(end: 8),
+            child: FilledButton.tonalIcon(
+              key: const ValueKey('history_add'),
+              style: FilledButton.styleFrom(minimumSize: const Size(48, 48)),
+              icon: const Icon(Icons.add),
+              label: Text(l10n.addReading),
+              onPressed: () => Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (_) => VitalEntryScreen(patient: patient, type: widget.type),
+                ),
+              ),
+            ),
           ),
-        ),
+        ],
       ),
+      bottomNavigationBar: AdBanner(adUnitId: AdIds.historyBanner),
       body: CachedStreamBuilder<List<VitalReading>>(
         streamKey: '${patient.id}_${widget.type.key}_$_days',
         create: () => context.read<VitalService>().watchReadings(patient.id, widget.type, since: from),
@@ -68,7 +82,7 @@ class _VitalHistoryScreenState extends State<VitalHistoryScreen> {
           }
           final readings = snapshot.data!;
           return ListView(
-            padding: const EdgeInsets.fromLTRB(16, 8, 16, 96),
+            padding: const EdgeInsets.fromLTRB(16, 8, 16, 24),
             children: [
               Text(patient.name, style: theme.textTheme.titleSmall),
               const SizedBox(height: 8),

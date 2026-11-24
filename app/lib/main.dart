@@ -16,6 +16,7 @@ import 'screens/home/home_shell.dart';
 import 'screens/onboarding/welcome_screen.dart';
 import 'screens/patients/edit_patient_screen.dart';
 import 'services/account_deletion_service.dart';
+import 'services/ads_service.dart';
 import 'services/auth_service.dart';
 import 'services/notification_service.dart';
 import 'services/patient_service.dart';
@@ -41,6 +42,7 @@ Future<void> main() async {
       vitalService: VitalService(),
       reminderService: reminderService,
       accountDeletionService: AccountDeletionService(),
+      ads: AdMobService.instance,
       appState: AppState(
         authService: authService,
         patientService: patientService,
@@ -72,6 +74,7 @@ class LiveHealthyVitalsApp extends StatelessWidget {
   final VitalService vitalService;
   final ReminderService reminderService;
   final AccountDeletionService accountDeletionService;
+  final AdsController ads;
   final AppState appState;
   final Stream<ReminderPayload>? reminderTaps;
   final ReminderPayload? launchPayload;
@@ -83,6 +86,7 @@ class LiveHealthyVitalsApp extends StatelessWidget {
     required this.vitalService,
     required this.reminderService,
     required this.accountDeletionService,
+    required this.ads,
     required this.appState,
     this.reminderTaps,
     this.launchPayload,
@@ -97,6 +101,7 @@ class LiveHealthyVitalsApp extends StatelessWidget {
         Provider<VitalService>.value(value: vitalService),
         Provider<ReminderService>.value(value: reminderService),
         Provider<AccountDeletionService>.value(value: accountDeletionService),
+        Provider<AdsController>.value(value: ads),
         ChangeNotifierProvider<AppState>.value(value: appState),
       ],
       child: Selector<AppState, String>(
@@ -138,6 +143,11 @@ class _RootRouterState extends State<RootRouter> {
   void initState() {
     super.initState();
     _pending = widget.launchPayload;
+    // Consent (UMP) and the ads SDK start after the first frame, so ads can
+    // never delay the app opening; failures are swallowed inside.
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (mounted) context.read<AdsController>().initialize();
+    });
     _tapSub = widget.reminderTaps?.listen((payload) {
       _pending = payload;
       _tryOpenPending();

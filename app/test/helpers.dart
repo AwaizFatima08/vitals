@@ -5,6 +5,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:livehealthy_vitals/core/app_state.dart';
 import 'package:livehealthy_vitals/main.dart';
 import 'package:livehealthy_vitals/services/account_deletion_service.dart';
+import 'package:livehealthy_vitals/services/ads_service.dart';
 import 'package:livehealthy_vitals/services/auth_service.dart';
 import 'package:livehealthy_vitals/services/notification_service.dart';
 import 'package:livehealthy_vitals/services/patient_service.dart';
@@ -89,6 +90,7 @@ class TestHarness {
     vitalService: vitalService,
     reminderService: reminderService,
     accountDeletionService: deletionService,
+    ads: AdsController.disabled(),
     appState: appState,
   );
 

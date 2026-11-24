@@ -174,5 +174,9 @@
   "deleteFailed": "Could not delete your account. Please try again.",
   "version": "Version {version}",
   "@version": {"placeholders": {"version": {"type": "String"}}},
-  "ok": "OK"
+  "ok": "OK",
+
+  "adLabel": "Advertisement",
+  "adPrivacyOptions": "Privacy options for ads",
+  "adPrivacyOptionsSubtitle": "Review or change your ad consent choices"
 }

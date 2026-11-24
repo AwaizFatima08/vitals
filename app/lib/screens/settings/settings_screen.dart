@@ -8,6 +8,7 @@ import '../../core/app_state.dart';
 import '../../core/constants/links.dart';
 import '../../l10n/generated/app_localizations.dart';
 import '../../services/account_deletion_service.dart';
+import '../../services/ads_service.dart';
 import '../../services/auth_service.dart';
 
 class SettingsScreen extends StatefulWidget {
@@ -71,6 +72,20 @@ class _SettingsScreenState extends State<SettingsScreen> {
             title: Text(l10n.termsOfUse),
             trailing: const Icon(Icons.open_in_new, size: 18),
             onTap: () => _open(Links.terms),
+          ),
+          // Required by Google's consent rules (EEA/UK/CH): users must be able
+          // to change their ad consent later. Hidden where it doesn't apply.
+          ValueListenableBuilder<bool>(
+            valueListenable: context.read<AdsController>().privacyOptionsRequired,
+            builder: (context, required, _) => !required
+                ? const SizedBox.shrink()
+                : ListTile(
+                    key: const ValueKey('settings_ad_privacy'),
+                    leading: const Icon(Icons.ads_click),
+                    title: Text(l10n.adPrivacyOptions),
+                    subtitle: Text(l10n.adPrivacyOptionsSubtitle),
+                    onTap: () => context.read<AdsController>().showPrivacyOptions(),
+                  ),
           ),
           const Divider(),
           ListTile(
