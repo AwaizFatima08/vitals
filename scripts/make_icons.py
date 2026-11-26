@@ -101,5 +101,4 @@ if __name__ == '__main__':
     adaptive_foreground('app/assets/images/app_icon_foreground.png')
     launcher_icon('store/graphics/app_icon_clean.png')
     launcher_icon('store/graphics/play_store_icon_512.png', size=512)
-    feature_graphic('store/graphics/feature_graphic.png', 'store/graphics/app_icon_clean.png')
     print('icons written')

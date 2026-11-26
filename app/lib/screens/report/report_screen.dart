@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '../../core/app_state.dart';
+import '../../core/constants/app_images.dart';
 import '../../l10n/generated/app_localizations.dart';
 import '../../services/report_service.dart';
 
@@ -82,6 +83,21 @@ class _ReportScreenState extends State<ReportScreen> {
         child: ListView(
           padding: const EdgeInsets.all(16),
           children: [
+            // Decorative header (homidev job 20261126-1447, approved by Homi).
+            Center(
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(20),
+                child: Image.asset(
+                  AppImages.reportHeader,
+                  height: 120,
+                  width: 120,
+                  fit: BoxFit.cover,
+                  cacheWidth: 360,
+                  excludeFromSemantics: true,
+                ),
+              ),
+            ),
+            const SizedBox(height: 16),
             if (patient != null) Text(patient.name, style: theme.textTheme.titleLarge),
             const SizedBox(height: 8),
             Text(l10n.reportIntro, style: theme.textTheme.bodyMedium),

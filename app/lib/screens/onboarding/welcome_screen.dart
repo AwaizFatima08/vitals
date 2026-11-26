@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../core/constants/app_images.dart';
 import '../../l10n/generated/app_localizations.dart';
 import '../auth/sign_in_screen.dart';
 import '../auth/sign_up_screen.dart';
@@ -45,7 +46,20 @@ class WelcomeScreen extends StatelessWidget {
             ),
             const SizedBox(height: 12),
             Text(l10n.tagline, style: theme.textTheme.bodyLarge),
-            const SizedBox(height: 36),
+            const SizedBox(height: 20),
+            // Decorative hero (homidev job 20261126-1441, approved by Homi).
+            ClipRRect(
+              borderRadius: BorderRadius.circular(20),
+              child: Image.asset(
+                AppImages.welcomeHero,
+                height: 180,
+                fit: BoxFit.cover,
+                alignment: const Alignment(0, 0.1),
+                cacheWidth: 720,
+                excludeFromSemantics: true,
+              ),
+            ),
+            const SizedBox(height: 28),
             Text(l10n.onboardingTitle, style: theme.textTheme.titleLarge),
             const SizedBox(height: 16),
             _ChoiceCard(
