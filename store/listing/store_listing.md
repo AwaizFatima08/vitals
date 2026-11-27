@@ -122,15 +122,20 @@ No exact-alarm, full-screen-intent, camera, location, contacts or storage permis
 - Hi-res icon 512×512: `store/graphics/play_store_icon_512.png`
 - Feature graphic 1024×500 (v1.1): `store/graphics/feature_graphic.png`: homidev art (job
   20261126-1452, approved by Homi 2026-11-26) with the title drawn in code
-- Phone screenshots v1.1 (1200×2400, captioned, within Play's 2:1 limit), upload in order:
-  `store/graphics/phone_screenshots_v11/01..09`
+- Phone screenshots v1.1 (1080×1920 = 9:16, captioned; Play now allows 2–8 at 16:9/9:16),
+  upload in order: `store/graphics/phone_screenshots_v11/01..08`
   01 home · 02 BP trend · 03 period summary · 04 doctor report · 05 BP entry · 06 glucose ·
-  07 family · 08 reminders · 09 Urdu
+  07 family · 08 Urdu
 - v1.0 screenshots (uncaptioned): `store/graphics/phone_screenshots/01..08`
 - Raw device captures: `store/graphics/screenshots/` (v1.0 1080×2400; `10_`/`11_` from the v1.1 OPPO run,
   1080×2372)
 - Sources: `scripts/make_icons.py` (icons) and `scripts/make_store_graphics.py` (feature graphic,
   captioned screenshots)
+
+## Full description changes (v1.1, saved as a Play draft 2026-11-27)
+- "See how things are going" adds: the period summary (average, lowest, highest, morning vs evening)
+- New sections "7-day home BP check" and "Free doctor report" (PDF/CSV, no ads on the report screen)
+- Closing line adds: a small ad on the history screens; readings never shared with advertisers
 
 ## Release notes (v1.1.0) — "What's new" (500 chars max)
 English:

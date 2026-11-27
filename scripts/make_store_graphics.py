@@ -24,8 +24,7 @@ SCREENS = [
     ('05_bp_entry', 'store/graphics/screenshots/03_bp_entry.png', 'Log blood pressure\nin seconds'),
     ('06_glucose', 'store/graphics/screenshots/04_glucose_entry.png', 'Blood sugar, fasting\nor after a meal'),
     ('07_family', 'store/graphics/screenshots/08_patients.png', 'Track parents and\nfamily in one account'),
-    ('08_reminders', 'store/graphics/screenshots/07_reminders.png', 'Gentle daily\nreminders'),
-    ('09_urdu', 'store/graphics/screenshots/09_urdu.png', 'In English\nand Urdu'),
+    ('08_urdu', 'store/graphics/screenshots/09_urdu.png', 'In English\nand Urdu'),
 ]
 
 
@@ -59,20 +58,20 @@ def feature_graphic(path):
 
 
 def captioned(path, raw, caption):
-    w, h = 1200, 2400
+    w, h = 1080, 1920  # Play: 9:16, at most 8 screenshots
     img = gradient(w, h, (18, 138, 99), GREEN_DARK)
     d = ImageDraw.Draw(img)
     lines = caption.split('\n')
-    y = 120
-    f = font(76)
+    y = 90
+    f = font(66)
     for line in lines:
         tw = d.textlength(line, font=f)
         d.text(((w - tw) / 2, y), line, font=f, fill=WHITE)
-        y += 100
+        y += 86
     shot = Image.open(raw).convert('RGB')
-    sw = 940
+    sw = 800
     shot = shot.resize((sw, round(shot.height * sw / shot.width)), Image.LANCZOS)
-    top = 120 + 100 * len(lines) + 70
+    top = 90 + 86 * len(lines) + 56
     frame = Image.new('L', shot.size, 0)
     ImageDraw.Draw(frame).rounded_rectangle([0, 0, shot.width, shot.height + 60], radius=48, fill=255)
     border = Image.new('RGB', (sw + 24, shot.height + 24), (10, 60, 44))
